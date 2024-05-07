@@ -638,6 +638,9 @@ class Track:
     async def is_gctts(self) -> bool:
         return (await self.query()).is_gctts
 
+    async def is_flowery_tts(self) -> bool:
+        return (await self.query()).is_flowery_tts
+
     async def is_deezer(self) -> bool:
         return (await self.query()).is_deezer
 

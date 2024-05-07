@@ -20,10 +20,10 @@ SQUARE_BRACKETS = re.compile(r"[\[\]]")
 TIME_CONVERTER = re.compile(r"(?:(\d+):)?(\d+):(\d+)")
 VOICE_CHANNEL_ENDPOINT = re.compile(r"^(?P<region>.*?)\d+.discord.media:\d+$")
 
-DISCORD_ID = re.compile(r"([0-9]{15,20})$")
-DISCORD_USER_MENTION = re.compile(r"<@!?([0-9]{15,20})>$")
-DISCORD_CHANNEL_MENTION = re.compile(r"<#([0-9]{15,20})>$")
-DISCORD_ROLE_MENTION = re.compile(r"<@&([0-9]{15,20})>$")
+DISCORD_ID = re.compile(r"(\d{15,20})$")
+DISCORD_USER_MENTION = re.compile(r"<@!?(\d{15,20})>$")
+DISCORD_CHANNEL_MENTION = re.compile(r"<#(\d{15,20})>$")
+DISCORD_ROLE_MENTION = re.compile(r"<@&(\d{15,20})>$")
 
 JAVA_VERSION_LINE_PRE223 = re.compile(r'version "1\.(?P<major>[0-8])\.(?P<minor>0)(?:_\d+)?(?:-.*)?"')
 JAVA_VERSION_LINE_223 = re.compile(r'version "(?P<major>\d+)(?:\.(?P<minor>\d+))?(?:\.\d+)*(-[a-zA-Z\d]+)?"')
@@ -133,6 +133,9 @@ SOURCE_INPUT_MATCH_YOUTUBE = re.compile(
 SOURCE_INPUT_MATCH_SPEAK = re.compile(r"^(?P<speak_source>speak):\s*?(?P<speak_query>.*)$", re.IGNORECASE)
 # noinspection SpellCheckingInspection
 SOURCE_INPUT_MATCH_GCTSS = re.compile(r"^(?P<gctts_source>tts://)\s*?(?P<gctts_query>.*)$", re.IGNORECASE)
+SOURCE_INPUT_MATCH_FLOWERY_TSS = re.compile(
+    r"^(?P<flowery_tts_source>ftts://)\s*?(?P<flowery_tts_query>.*)$", re.IGNORECASE
+)
 SOURCE_INPUT_MATCH_SEARCH = re.compile(
     r"^((?P<search_source>ytm|yt|sp|sc|am|dz|lava)search|(?P<search_deezer_isrc>dzisrc)):\s*?(?P<search_query>.*)$",
     re.IGNORECASE,
@@ -154,7 +157,7 @@ SOURCE_INPUT_MATCH_YANDEX_TRACK = re.compile(
     r"(?P<ymidentifier>[0-9]+)/?((?P<ymtype2>track/)(?P<ymidentifier2>[0-9]+)/?)?$"
 )
 SOURCE_INPUT_MATCH_YANDEX_PLAYLIST = re.compile(
-    r"^(https?://)?music\.yandex\.ru/users/(?P<ympidentifier>[0-9A-Za-z@.-]+)/playlists/(?P<ympidentifier2>[0-9]+)/?$"
+    r"^(https?://)?music\.yandex\.ru/users/(?P<ympidentifier>[0-9A-Za-z@.-]+)/playlists/(?P<ympidentifier2>\d+)/?$"
 )
 SOURCE_INPUT_MATCH_YANDEX = re.compile(
     "|".join([SOURCE_INPUT_MATCH_YANDEX_TRACK.pattern, SOURCE_INPUT_MATCH_YANDEX_PLAYLIST.pattern])
@@ -176,6 +179,7 @@ SOURCE_INPUT_MATCH_MERGED = re.compile(
                 SOURCE_INPUT_MATCH_YOUTUBE,
                 SOURCE_INPUT_MATCH_SPEAK,
                 SOURCE_INPUT_MATCH_GCTSS,
+                SOURCE_INPUT_MATCH_FLOWERY_TSS,
                 SOURCE_INPUT_MATCH_SEARCH,
                 SOURCE_INPUT_MATCH_CLYPIT,
                 SOURCE_INPUT_MATCH_GETYARN,

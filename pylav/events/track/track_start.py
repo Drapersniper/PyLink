@@ -589,3 +589,27 @@ class TrackStartGCTTSEvent(TrackStartEvent):
 
     def __init__(self, player: Player, track: Track, node: Node, event_object: TrackStart) -> None:
         super().__init__(player, track, node, event_object)
+
+
+class TrackStartFloweryTTSEvent(TrackStartEvent):
+    """This event is dispatched when the player starts to play a Flowery TTS track.
+
+    Event can be listened to by adding a listener with the name `pylav_track_start_flowery_tts_event`.
+
+    Attributes
+    ----------
+    player: :class:`Player`
+        The player that started to play the track.
+    track: :class:`Track`
+        The track that was started.
+    node: :class:`Node`
+        The node that dispatched the event.
+    event: :class:`TrackStart`
+        The raw event object.
+
+    """
+
+    __slots__ = ("player", "track", "node", "event")
+
+    def __init__(self, player: Player, track: Track, node: Node, event_object: TrackStart) -> None:
+        super().__init__(player, track, node, event_object)

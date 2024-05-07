@@ -17,4 +17,6 @@ async def update_managed_node_settings(client: Client) -> None:
     data = await config.fetch_yaml()
     data["server"]["undertow"] = NODE_DEFAULT_SETTINGS["server"]["undertow"]
     data["server"]["compression"] = NODE_DEFAULT_SETTINGS["server"]["compression"]
+    data["lavalink"]["server"]["sources"]["youtube"] = NODE_DEFAULT_SETTINGS["lavalink"]["server"]["sources"]["youtube"]
+    data["lavalink"]["server"].pop("youtubeConfig", None)
     await config.update_yaml(data)

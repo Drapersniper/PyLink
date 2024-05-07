@@ -1,21 +1,15 @@
 lavalink:
     plugins:
-    -   dependency: com.github.topi314.lavasrc:lavasrc-plugin:4.0.1
-        repository: https://maven.lavalink.dev/releases # this is optional for lavalink v4.0.0-beta.5 or greater
-        snapshot: false # set to true if you want to use snapshot builds (see below)
-    -   dependency: com.github.topi314.sponsorblock:sponsorblock-plugin:3.0.0 # replace x.x.x with the latest release tag!
-        repository: https://maven.lavalink.dev/releases # this is optional for lavalink v4.0.0-beta.5 or greater
-        snapshot: false # set to true if you want to use snapshot builds (see below)
-    -   dependency: com.dunctebot:skybot-lavalink-plugin:1.6.3
-        repository: https://maven.lavalink.dev/releases  # (optional on lavalink 4)
-        snapshot: false # (optional, tells lavalink to use the default snaptshot repository instead)
+    -   dependency: com.github.topi314.lavasrc:lavasrc-plugin:4.1.0
+    -   dependency: com.github.topi314.sponsorblock:sponsorblock-plugin:3.0.0
+    -   dependency: com.dunctebot:skybot-lavalink-plugin:1.7.0
+    -   dependency: com.github.topi314.lavasearch:lavasearch-plugin:1.0.0
+    -   dependency: com.github.topi314.lavalyrics:lavalyrics-plugin:1.0.0
+    -   dependency: dev.lavalink.youtube:youtube-plugin:1.1.0
     -   dependency: me.rohank05:lavalink-filter-plugin:0.0.4
         repository: https://jitpack.io
     -   dependency: com.github.esmBot:lava-xm-plugin:v0.2.2
         repository: https://jitpack.io
-    -   dependency: com.github.topi314.lavasearch:lavasearch-plugin:1.0.0
-        repository: https://maven.lavalink.dev/releases # this is optional for lavalink v4.0.0-beta.5 or greater
-        snapshot: false # set to true if you want to use snapshot builds (see below)
     server:
         password: youshallnotpass
         bufferDurationMs: 400 # The duration of the NAS buffer. Higher values fare better against longer GC pauses. Duration <= 0 to disable JDA-NAS. Minimum of 40ms, lower values may introduce pauses.
@@ -36,7 +30,7 @@ lavalink:
             soundcloud: true
             twitch: true
             vimeo: true
-            youtube: true
+            youtube: false # Deprecated
         filters: # All filters are enabled by default
             volume: true
             equalizer: true
@@ -49,21 +43,22 @@ lavalink:
             channelMix: true
             lowPass: true
             echo: true # From lavalink-filter-plugin
+            reverb: true # From lavalink-filter-plugin
 #    ratelimit:
 #        ipBlocks: [1.0.0.0/8, '...'] # list of ip blocks
 #        excludedIps: ['...', '...'] # ips which should be explicit excluded from usage by lavalink
 #        strategy: RotateOnBan # RotateOnBan | LoadBalance | NanoSwitch | RotatingNanoSwitch
 #        searchTriggersFail: true # Whether a search 429 should trigger marking the ip as failing
 #        retryLimit: -1 # -1 = use default lavaplayer value | 0 = infinity | >0 = retry will happen this numbers times
-#    youtubeConfig: # Required for avoiding all age restrictions by YouTube, some restricted videos still can be played without.
-#        email: '' # Email of Google account
-#        password: '' # Password of Google account
 #    httpConfig: # Useful for blocking bad-actors from ip-grabbing your music node and attacking it, this way only the http proxy will be attacked
 #        proxyHost: localhost # Hostname of the proxy, (ip or domain)
 #        proxyPort: 3128 # Proxy port, 3128 is the default for squidProxy
 #        proxyUser: '' # Optional user for basic authentication fields, leave blank if you don't use basic auth
 #        proxyPassword: '' # Password for basic authentication
 plugins:
+    youtube:
+        enabled: true
+        clients: [MUSIC, ANDROID, WEB, TVHTML5EMBEDDED, ANDROID_TESTSUITE, IOS]
     dunctebot:
         sources:
             getyarn: true # www.getyarn.io
@@ -76,6 +71,12 @@ plugins:
             mixcloud: true # mixcloud.com
             soundgasm: true # soundgasm.net
         ttsLanguage: en-US # language of the TTS engine
+    lavalyrics:
+        # sources is used to sort the different lyrics sources by priority (from highest to lowest)
+        sources:
+        -   spotify
+        -   youtube
+        -   deezer
     lavasrc:
         sources:
             spotify: true # Enable Spotify source
@@ -83,6 +84,7 @@ plugins:
             deezer: true # Enable Deezer source
             yandexmusic: false # Enable Yandex Music source
             youtube: true
+            flowerytts: true
         providers:
         -   dzisrc:%ISRC% # Deezer ISRC Search
         -   ytmsearch:"%ISRC%" # YouTube Music ISRC Search
@@ -99,6 +101,7 @@ plugins:
         spotify:
             clientId: CHANGE_ME
             clientSecret: CHANGE_ME
+            spDc: your sp dc cookie # the sp dc cookie used for accessing the spotify lyrics api
             countryCode: US # the country code you want to use for filtering the artists top tracks. See https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2
             playlistLoadLimit: 6 # The number of pages at 100 tracks each
             albumLoadLimit: 6 # The number of pages at 50 tracks each
@@ -107,6 +110,14 @@ plugins:
             # P.S IT IS NOT id58zow5hmqhdv24zil4znth3ywy8prt9-dizzzrlba8q4h2al0ywmhp2zg-1d5g
 #        yandexmusic:
 #            accessToken: CHANGE_ME # the token used for accessing the yandex music api. See https://github.com/topi314/LavaSrc#yandex-music
+        flowerytts:
+            voice: Airon    # (case-sensitive) get default voice from here https://api.flowery.pw/v1/tts/voices
+            translate: false  # whether to translate the text to the native language of voice
+            silence: 0  # the silence parameter is in milliseconds. Range is 0 to 10000. The default is 0.
+            speed: 1.0  # the speed parameter is a float between 0.5 and 10. The default is 1.0. (0.5 is half speed, 2.0 is double speed, etc.)
+            audioFormat: mp3    # supported formats are: mp3, ogg_opus, ogg_vorbis, aac, wav, and flac. Default format is mp3
+        youtube:
+            countryCode: US # the country code you want to use for searching lyrics via ISRC. See https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2
 server:
     address: localhost # Address to bind the server to, Client will connect to this address - 0.0.0.0 means all addresses, if you are using the node on same machine as bot then use localhost
     port: 2154 # Port to run the server on, Client will connect to this port

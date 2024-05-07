@@ -18,6 +18,7 @@ if TYPE_CHECKING:
         Equalizer,
         Karaoke,
         LowPass,
+        Reverb,
         Rotation,
         Timescale,
         Tremolo,
@@ -317,6 +318,8 @@ class FiltersAppliedEvent(PyLavEvent):
         The channel mix filter.
     echo: :class:`Echo` | :class:`None`
         The echo filter.
+    reverb: :class:`Reverb` | :class:`None`
+        The reverb filter.
     """
 
     __slots__ = (
@@ -333,6 +336,7 @@ class FiltersAppliedEvent(PyLavEvent):
         "low_pass",
         "channel_mix",
         "echo",
+        "reverb",
         "pluginFilters",
     )
 
@@ -352,7 +356,8 @@ class FiltersAppliedEvent(PyLavEvent):
         low_pass: LowPass | None = None,
         channel_mix: ChannelMix | None = None,
         echo: Echo | None = None,
-        pluginFilters: dict[str, Echo | None] = None,
+        reverb: Reverb | None = None,
+        pluginFilters: dict[str, Echo | Reverb | None] = None,
     ) -> None:
         self.player = player
         self.requester = requester
@@ -370,6 +375,7 @@ class FiltersAppliedEvent(PyLavEvent):
 
         self.pluginFilters = from_dict(data=pluginFilters, data_class=PluginInfoTypeHint) if pluginFilters else None
         self.echo = echo if echo else self.pluginFilters.echo if self.pluginFilters else None
+        self.reverb = reverb if reverb else self.pluginFilters.reverb if self.pluginFilters else None
 
 
 class QuickPlayEvent(PyLavEvent):
