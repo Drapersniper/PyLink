@@ -13,13 +13,20 @@ jobs:
         if: github.repository == 'PyLav/PyLav'
         runs-on: [ubuntu-latest]
         name: Upload the latest strings to Crowdin
+        concurrency:
+            group: crowdin
+            cancel-in-progress: true
         steps:
+        -   name: Sleep for 5 minutes
+            uses: jakejarvis/wait-action@master
+            with:
+                time: 5m
         -   uses: actions/checkout@v4.1.1
             with:
                 ref: develop
                 token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
         -   name: Set up Python
-            uses: actions/setup-python@v4
+            uses: actions/setup-python@v5
             with:
                 python-version: '3.11'
         -   name: Install dependencies

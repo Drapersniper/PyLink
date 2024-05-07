@@ -310,7 +310,6 @@ class LocalNodeManager:
         data = change_dict_naming_convention(data)
         # The reason this is here is to completely remove these keys from the application.yml
         # if they are set to empty values
-        await self.maybe_remove_youtube_config(data)
         await self.maybe_remove_ratelimit_config(data)
         await self.update_dns_config(data)
         await self.maybe_remove_proxy_config(data)
@@ -389,17 +388,6 @@ class LocalNodeManager:
             and data["lavalink"]["server"]["ratelimit"].get("strategy")
         ):
             del data["lavalink"]["server"]["ratelimit"]
-
-    @staticmethod
-    async def maybe_remove_youtube_config(data: JSON_DICT_TYPE) -> None:
-        """Remove YouTube config if it's not set."""
-        if not all(
-            (
-                data["lavalink"]["server"]["youtubeConfig"].get("email"),
-                data["lavalink"]["server"]["youtubeConfig"].get("password"),
-            )
-        ):
-            del data["lavalink"]["server"]["youtubeConfig"]
 
     async def _get_jar_args(self) -> tuple[list[str], str | None]:
         java_available, java_version = await self._has_java()
@@ -687,7 +675,7 @@ class LocalNodeManager:
     async def wait_until_connected(self, timeout: float | None = None) -> None:
         """Wait until Lavalink is connected."""
         tasks = [asyncio.create_task(c) for c in [self._wait_for.wait(), self.wait_until_ready()]]
-        done, pending = await asyncio.wait(tasks, timeout=timeout or self.timeout, return_when=asyncio.ALL_COMPLETED)
+        _, pending = await asyncio.wait(tasks, timeout=timeout or self.timeout, return_when=asyncio.ALL_COMPLETED)
         for task in pending:
             task.cancel()
 

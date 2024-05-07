@@ -4,7 +4,7 @@ import dataclasses
 import re
 from typing import TYPE_CHECKING
 
-from pylav.players.filters import Echo
+from pylav.players.filters import Echo, Reverb
 
 if TYPE_CHECKING:
     from pylav.events.base import PyLavEvent
@@ -31,3 +31,4 @@ def get_simple_event_name(class_type: type[PyLavEvent]) -> str:
 @dataclasses.dataclass(eq=True, slots=True, unsafe_hash=True, kw_only=True, frozen=True)
 class PluginInfoTypeHint:
     echo: Echo | None = None
+    reverb: Reverb | None = None

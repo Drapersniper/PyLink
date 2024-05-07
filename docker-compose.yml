@@ -70,14 +70,16 @@ services:
 
 
             # Plugins to load
-            LAVALINK_PLUGINS_0_DEPENDENCY: com.github.topi314.lavasrc:lavasrc-plugin:4.0.1
+            LAVALINK_PLUGINS_0_DEPENDENCY: com.github.topi314.lavasrc:lavasrc-plugin:4.1.0
             LAVALINK_PLUGINS_1_DEPENDENCY: com.github.topi314.sponsorblock:sponsorblock-plugin:3.0.0
-            LAVALINK_PLUGINS_2_DEPENDENCY: com.dunctebot:skybot-lavalink-plugin:1.6.3
+            LAVALINK_PLUGINS_2_DEPENDENCY: com.dunctebot:skybot-lavalink-plugin:1.7.0
             LAVALINK_PLUGINS_3_DEPENDENCY: com.github.topi314.lavasearch:lavasearch-plugin:1.0.0
-            LAVALINK_PLUGINS_4_DEPENDENCY: me.rohank05:lavalink-filter-plugin:0.0.4
-            LAVALINK_PLUGINS_4_REPOSITORY: https://jitpack.io
-            LAVALINK_PLUGINS_5_DEPENDENCY: com.github.esmBot:lava-xm-plugin:v0.2.2
-            LAVALINK_PLUGINS_5_REPOSITORY: https://jitpack.io
+            LAVALINK_PLUGINS_4_DEPENDENCY: dev.lavalink.youtube:youtube-plugin:1.1.0
+            LAVALINK_PLUGINS_5_DEPENDENCY: com.github.topi314.lavalyrics:lavalyrics-plugin:1.0.0
+            LAVALINK_PLUGINS_6_DEPENDENCY: me.rohank05:lavalink-filter-plugin:0.0.4
+            LAVALINK_PLUGINS_6_REPOSITORY: https://jitpack.io
+            LAVALINK_PLUGINS_7_DEPENDENCY: com.github.esmBot:lava-xm-plugin:v0.2.2
+            LAVALINK_PLUGINS_7_REPOSITORY: https://jitpack.io
 
 
             # Configure built-in sources
@@ -87,7 +89,7 @@ services:
             LAVALINK_SERVER_SOURCES_SOUNDCLOUD: true # Enable Soundcloud source
             LAVALINK_SERVER_SOURCES_TWITCH: true # Enable Twitch source
             LAVALINK_SERVER_SOURCES_VIMEO: true # Enable Vimeo source
-            LAVALINK_SERVER_SOURCES_YOUTUBE: true # Enable YouTube source
+            LAVALINK_SERVER_SOURCES_YOUTUBE: false # Enable YouTube source (deprecated)
 
             # Configure filters
             LAVALINK_SERVER_FILTERS_CHANNELMIX: true  # Enable the Channel Mix filter
@@ -139,6 +141,14 @@ services:
             METRICS_PROMETHEUS_ENABLED: false
             METRICS_PROMETHEUS_ENDPOINT: /metrics
 
+            # Configure YouTube Plugin
+            PLUGINS_YOUTUBE_ENABLED: true
+            PLUGINS_YOUTUBE_CLIENTS_0: MUSIC
+            PLUGINS_YOUTUBE_CLIENTS_1: ANDROID
+            PLUGINS_YOUTUBE_CLIENTS_2: WEB
+            PLUGINS_YOUTUBE_CLIENTS_3: TVHTML5EMBEDDED
+            PLUGINS_YOUTUBE_CLIENTS_4: ANDROID_TESTSUITE
+            PLUGINS_YOUTUBE_CLIENTS_5: IOS
 
             # Configure DuncteBot Plugin
             PLUGINS_DUNCTEBOT_SOURCES_CLYPIT: true
@@ -152,6 +162,10 @@ services:
             PLUGINS_DUNCTEBOT_SOURCES_TTS: true
             PLUGINS_DUNCTEBOT_TTSLANGUAGE: en-US
 
+            # Configure LavaLyrics Plugin
+            PLUGINS_LAVALYRICS_SOURCES_0: spotify
+            PLUGINS_LAVALYRICS_SOURCES_1: youtube
+            PLUGINS_LAVALYRICS_SOURCES_2: deezer
 
             # Configure LavaSrc Plugin
             # The Track search order (Deezer ISRC, YouTube Music ISRC, YouTube ISRC, YouTube Music Query, YouTube Query, Deezer Query, SoundCloud Query)
@@ -169,13 +183,13 @@ services:
             # # PLUGINS_LAVASRC_DEEZER_MASTERDECRYPTIONKEY:  # Leave this as it is, or fill it with the deezer key if you have it
             # P.S IT IS NOT id58zow5hmqhdv24zil4znth3ywy8prt9-dizzzrlba8q4h2al0ywmhp2zg-1d5g
 
-
             # Lavasrc Apple music configuration
             PLUGINS_LAVASRC_SOURCES_APPLEMUSIC: false          # Enable Apple Music source
             PLUGINS_LAVASRC_APPLEMUSIC_COUNTRYCODE: US        # the country code you want to use for filtering the artists top tracks and language. See https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2
             PLUGINS_LAVASRC_APPLEMUSIC_MEDIAAPITOKEN: CHANGE_ME        # Necessary
             PLUGINS_LAVASRC_APPLEMUSIC_PLAYLISTLOADLIMIT: 30  # The number of pages at 300 tracks each
             PLUGINS_LAVASRC_APPLEMUSIC_ALBUMLOADLIMIT: 30     # The number of pages at 300 tracks each
+
             # Lavasrc Spotify configuration
             PLUGINS_LAVASRC_SOURCES_SPOTIFY: true             # Enable Spotify source
             PLUGINS_LAVASRC_SPOTIFY_CLIENTID: CHANGE_ME       # Your Spotify Client ID
@@ -183,11 +197,24 @@ services:
             PLUGINS_LAVASRC_SPOTIFY_COUNTRYCODE: US           # The country code you want to use for filtering the artists top tracks and language. See https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2
             PLUGINS_LAVASRC_SPOTIFY_PLAYLISTLOADLIMIT: 110    # The number of pages at 100 tracks each
             PLUGINS_LAVASRC_SPOTIFY_ALBUMLOADLIMIT: 220       # The number of pages at 50 tracks each
+            PLUGINS_LAVASRC_SPOTIFY_SPDC: CHANGE_ME # the sp dc cookie used for accessing the spotify lyrics api
+
             # Lavasrc Yandex configuration
             PLUGINS_LAVASRC_SOURCES_YANDEXMUSIC: false        # Enable Yandex Music source
             PLUGINS_LAVASRC_YANDEXMUSIC_ACCESSTOKEN:          # the token used for accessing the yandex music api. See https://github.com/topi314/LavaSrc#yandex-music
+
             # Lavasrc YouTube configuration
             PLUGINS_LAVASRC_SOURCES_YOUTUBE: true  # Enable YouTube Search source
+            PLUGINS_LAVASRC_YOUTUBE_COUNTRYCODE: US # the country code you want to use for searching lyrics via ISRC. See https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2
+
+            # Lavasrc FloweryTTS configuration
+            PLUGINS_LAVASRC_SOURCES_FLOWERYTTS: true
+            PLUGINS_LAVASRC_FLOWERYTTS_VOICE: Airon  # (case-sensitive) get default voice from here https://api.flowery.pw/v1/tts/voices
+            PLUGINS_LAVASRC_FLOWERYTTS_TRANSLATE: false # whether to translate the text to the native language of voice
+            PLUGINS_LAVASRC_FLOWERYTTS_SILENCE: 0 # the silence parameter is in milliseconds. Range is 0 to 10000. The default is 0.
+            PLUGINS_LAVASRC_FLOWERYTTS_SPEED: 1.0 # the speed parameter is a float between 0.5 and 10. The default is 1.0. (0.5 is half speed, 2.0 is double speed, etc.)
+            PLUGINS_LAVASRC_FLOWERYTTS_AUDIOFORMAT: mp3 # supported formats are: mp3, ogg_opus, ogg_vorbis, aac, wav, and flac. Default format is mp3
+
 
             # Configure Sentry
             SENTRY_DSN:

@@ -19,6 +19,7 @@ __all__ = (
     "ChannelMix",
     "Distortion",
     "Echo",
+    "Reverb",
     "Equalizer",
     "EqualizerBand",
     "Karaoke",
@@ -38,6 +39,7 @@ from pylav.type_hints.generics import ANY_GENERIC_TYPE
 @dataclasses.dataclass(kw_only=True)
 class PluginFilters(PluginInfo):
     echo: NotRequired[Echo] | None = dataclasses.field(init=False)
+    reverb: NotRequired[Reverb] | None = dataclasses.field(init=False)
 
 
 @dataclasses.dataclass(repr=True, frozen=True, kw_only=True, slots=True)
@@ -124,8 +126,11 @@ class Filters:
         | ChannelMix
         | LowPass
         | Echo
+        | Reverb
         | None,
-        cls: type[Karaoke | Timescale | Tremolo | Vibrato | Rotation | Distortion | ChannelMix | LowPass | Echo],
+        cls: type[
+            Karaoke | Timescale | Tremolo | Vibrato | Rotation | Distortion | ChannelMix | LowPass | Echo | Reverb
+        ],
         response: ANY_GENERIC_TYPE,
     ) -> ANY_GENERIC_TYPE:
         if isinstance(filter_name, cls):

@@ -270,8 +270,6 @@ class Client(metaclass=SingletonClass):
                 await self.update_deezer_tokens(**api_tokens)
             case "yandexmusic" if "token" in api_tokens:
                 await self.update_yandex_tokens(**api_tokens)
-            case "google" if ("email" in api_tokens and "password" in api_tokens):
-                await self.update_google_account(**api_tokens)
 
     async def on_pylav_shard_resumed(self, shard_id: int) -> None:
         """Handle shard resume events."""
@@ -816,16 +814,6 @@ class Client(metaclass=SingletonClass):
         )
         await bundled_node_config.update_yaml(bundled_node_config_yaml)
 
-    async def update_google_account(self, email: str, password: str, **kwargs: Any) -> None:
-        """Update Google Account for the managed node."""
-        LOGGER.info("Updating Google Account")
-        LOGGER.debug("New Google Account: %s", email)
-        bundled_node_config = self._node_config_manager.bundled_node_config()
-        bundled_node_config_yaml = await bundled_node_config.fetch_yaml()
-        bundled_node_config_yaml["lavalink"]["server"]["youtubeConfig"]["email"] = email
-        bundled_node_config_yaml["lavalink"]["server"]["youtubeConfig"]["password"] = password
-        await bundled_node_config.update_yaml(bundled_node_config_yaml)
-
     async def add_node(
         self,
         *,
@@ -937,7 +925,7 @@ class Client(metaclass=SingletonClass):
             if isinstance(response, Track_namespace_conflict):
                 return response
             raise TypeError
-        except Exception as exc:  # noqa
+        except Exception:  # noqa
             return decode_track(track)
 
     async def decode_tracks(
@@ -1188,9 +1176,7 @@ class Client(metaclass=SingletonClass):
             colour = await self._bot.get_embed_color(messageable)
         elif colour or color:
             colour = colour or color
-        if timestamp and isinstance(timestamp, datetime.datetime):
-            timestamp = timestamp
-        else:
+        if not (timestamp and isinstance(timestamp, datetime.datetime)):
             timestamp = get_now_utc()
         contents = dict(
             title=title,

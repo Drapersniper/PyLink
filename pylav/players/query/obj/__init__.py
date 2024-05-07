@@ -25,6 +25,7 @@ from pylav.constants.regex import (
     SOURCE_INPUT_MATCH_BASE64_TEST,
     SOURCE_INPUT_MATCH_CLYPIT,
     SOURCE_INPUT_MATCH_DEEZER,
+    SOURCE_INPUT_MATCH_FLOWERY_TSS,
     SOURCE_INPUT_MATCH_GCTSS,
     SOURCE_INPUT_MATCH_GETYARN,
     SOURCE_INPUT_MATCH_HTTP,
@@ -262,6 +263,10 @@ class Query:
         return self.source == "Google TTS"
 
     @property
+    def is_flowery_tts(self) -> bool:
+        return self.source == "Flowery TTS"
+
+    @property
     def is_m3u(self) -> bool:
         return self.source == "M3U"
 
@@ -305,6 +310,8 @@ class Query:
                 return f"speak:{self._query[:200]}"
             elif self.is_gctts:
                 return f"tts://{self._query}"
+            elif self.is_flowery_tts:
+                return f"ftts://{self._query}"
             elif self.is_yandex_music:
                 return f"ymsearch:{self._query}"
             elif self.is_lavasearch:
@@ -334,6 +341,9 @@ class Query:
         elif match := SOURCE_INPUT_MATCH_GCTSS.match(query):
             query = match.group("gctts_query").strip()
             return cls(query, "Google TTS", search=True)
+        elif match := SOURCE_INPUT_MATCH_FLOWERY_TSS.match(query):
+            query = match.group("flowery_tts_query").strip()
+            return cls(query, "Flowery TTS", search=True)
         elif match := SOURCE_INPUT_MATCH_SPEAK.match(query):
             query = match.group("speak_query").strip()
             return cls(query, "speak", search=True)
@@ -639,9 +649,8 @@ class Query:
 
                 async for entry in op():
                     yield entry
-        elif self.is_single:
-            if self.is_local:
-                yield self
+        elif self.is_single and self.is_local:
+            yield self
 
     async def _yield_m3u_tracks(self) -> AsyncIterator[Query]:
         if not self.is_m3u or not self.is_album:
@@ -894,6 +903,8 @@ class Query:
             return "speak"
         elif self.is_gctts:
             return "gcloud-tts"
+        elif self.is_flowery_tts:
+            return "flowery-tts"
         elif self.is_getyarn:
             return "getyarn.io"
         elif self.is_clypit:
@@ -916,7 +927,7 @@ class Query:
             return "deezer"
         elif self.is_yandex_music:
             return "yandexmusic"
-        elif self.is_lava_search:
+        elif self.is_lavasearch:
             return "lavasearch"
         else:
             return "youtube"
@@ -942,6 +953,8 @@ class Query:
         elif self.is_speak:
             return "TTS"
         elif self.is_gctts:
+            return "TTS"
+        elif self.is_flowery_tts:
             return "TTS"
         elif self.is_getyarn:
             return "GY"

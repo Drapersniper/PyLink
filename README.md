@@ -20,18 +20,21 @@
 ---------------------------
 ## Supported sources
 ### [Built-in](https://github.com/lavalink-devs/Lavalink):
-  - youtube
+  - youtube (Deprecated with LL 4.0.5)
   - soundcloud
   - bandcamp
   - twitch
   - vimeo
   - http
   - local
+### With [YouTube-plugin](https://github.com/lavalink-devs/youtube-source):
+- youtube
 ### With [LavaSrc](https://github.com/topi314/LavaSrc)
   - spotify
   - applemusic
   - deezer
   - youtube
+  - flowery-tts
 ### With [DuncteBot-plugin](https://github.com/DuncteBot/skybot-lavalink-plugin):
   - getyarn.io
   - clypit
@@ -47,6 +50,7 @@
 ### With [Sponsorblock-Plugin](https://github.com/topi314/Sponsorblock-Plugin):
   - sponsorblock
 ### With [LavaSearch](https://github.com/topi314/LavaSearch):
+### With [LavaLyrics](https://github.com/topi314/LavaLyrics):
 
 ## Supported Lavalink features
   - Supports all features of [Lavalink](https://github.com/lavalink-devs/Lavalink)
@@ -95,7 +99,6 @@ Credits
 ---------------------------
 - [Topi](https://github.com/topi314) for all the work done to Lavalink and implementing direct requests to make PyLav even better.
 - [Devoxin - Lavalink.py](https://github.com/Devoxin/Lavalink.py) for the original ideas for implementation.
-- [Ryan](https://github.com/ryan5453) for the amazing [Lyrics API](https://flowery.pw) used for lyrics.
 - [globocom/m3u8](https://github.com/globocom/m3u8) for the M3U8 parser which I made asynchronous found in [m3u8_parser](pylav/extension/m3u).
 - [andreztz/pyradios](https://github.com/andreztz/pyradios) for the radio parser which I made asynchronous found in [radio](pylav/extension/radio).
 - [Lifeismana](https://github.com/Lifeismana) for the custom Red-DiscordBot docker image which added Python3.11 support until Phasecore's image is updated.

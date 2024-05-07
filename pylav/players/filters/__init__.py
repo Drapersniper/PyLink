@@ -17,6 +17,7 @@ __all__ = (
     "ChannelMix",
     "Distortion",
     "Echo",
+    "Reverb",
     "Equalizer",
     "Karaoke",
     "LowPass",

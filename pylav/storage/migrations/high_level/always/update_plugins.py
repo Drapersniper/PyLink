@@ -40,6 +40,11 @@ async def update_plugins(client: Client) -> None:
                 org = "topi314"
                 repo = "LavaSearch"
                 dependency += ":"
+            elif plugin["dependency"].startswith("com.github.topi314.lavalyrics:lavalyrics-plugin:"):
+                existing_plugins.add("lavalyrics-plugin-")
+                org = "topi314"
+                repo = "LavaLyrics"
+                dependency += ":"
             elif plugin["dependency"].startswith("com.dunctebot:skybot-lavalink-plugin:"):
                 existing_plugins.add("skybot-lavalink-plugin-")
                 org = "DuncteBot"
@@ -49,6 +54,11 @@ async def update_plugins(client: Client) -> None:
                 existing_plugins.add("sponsorblock-plugin-")
                 org = "topi314"
                 repo = "Sponsorblock-Plugin"
+                dependency += ":"
+            elif plugin["dependency"].startswith("dev.lavalink.youtube:youtube-plugin:"):
+                existing_plugins.add("youtube-plugin-")
+                org = "lavalink-devs"
+                repo = "youtube-source"
                 dependency += ":"
             elif plugin["dependency"].startswith("com.github.esmBot:lava-xm-plugin:"):
                 existing_plugins.add("lava-xm-plugin-")

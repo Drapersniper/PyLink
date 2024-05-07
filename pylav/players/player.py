@@ -82,6 +82,7 @@ from pylav.players.filters import (
     Equalizer,
     Karaoke,
     LowPass,
+    Reverb,
     Rotation,
     Timescale,
     Tremolo,
@@ -153,6 +154,7 @@ class Player(VoiceProtocol):
         "_distortion",
         "_lowpass",
         "_echo",
+        "_reverb",
         "_channelmix",
         "_extras",
         "_last_alone_paused_check",
@@ -232,6 +234,7 @@ class Player(VoiceProtocol):
         self._rotation: Rotation = Rotation.default()
         self._distortion: Distortion = Distortion.default()
         self._echo: Echo = Echo.default()
+        self._reverb: Reverb = Reverb.default()
         self._low_pass: LowPass = LowPass.default()
         self._channel_mix: ChannelMix = ChannelMix.default()
 
@@ -418,6 +421,12 @@ class Player(VoiceProtocol):
             self._channel_mix = f
         if self.node.has_filter("echo") and (echo := effects.get("echo", None)) and (f := Echo.from_dict(echo)):  # noqa
             self._echo = f
+        if (
+            self.node.has_filter("reverb")
+            and (reverb := effects.get("reverb", None))
+            and (f := Reverb.from_dict(reverb))
+        ):  # noqa
+            self._reverb = f
         payload = {}
         if any(
             [
@@ -611,6 +620,11 @@ class Player(VoiceProtocol):
     def echo(self) -> Echo:
         """The currently applied Echo filter"""
         return self._echo
+
+    @property
+    def reverb(self) -> Reverb:
+        """The currently applied Echo filter"""
+        return self._reverb
 
     @property
     def low_pass(self) -> LowPass:
@@ -1562,11 +1576,12 @@ class Player(VoiceProtocol):
         """
         if event.node.identifier != self.node.identifier:
             return
-        if isinstance(event, TrackStuckEvent) or isinstance(event, TrackEndEvent) and event.reason == "finished":
-            self.last_track = self.current
-            await self.next()
-            self.next_track = None if self.queue.empty() else self.queue.raw_queue.popleft()
-        elif isinstance(event, TrackExceptionEvent):
+        if (
+            isinstance(event, TrackEndEvent)
+            and event.reason == "finished"
+            or isinstance(event, TrackExceptionEvent)
+            or isinstance(event, TrackStuckEvent)
+        ):
             self.last_track = self.current
             await self.next()
             self.next_track = None if self.queue.empty() else self.queue.raw_queue.popleft()
@@ -2016,6 +2031,26 @@ class Player(VoiceProtocol):
             requester=requester,
         )
 
+    async def set_reverb(self, requester: discord.Member, reverb: Reverb, forced: bool = False) -> None:
+        """
+        Sets the Reverb of Lavalink.
+        Parameters
+        ----------
+        reverb : Reverb
+            Reverb to set
+        forced : bool
+            Whether to force the low_pass to be set resetting any other filters currently applied
+        requester : discord.Member
+            Member who requested the filter change
+        """
+        if not self.node.has_filter("reverb"):
+            raise NodeHasNoFiltersException(_("Current node has the reverb feature disabled."))
+        await self.set_filters(
+            reverb=reverb,
+            reset_not_set=forced,
+            requester=requester,
+        )
+
     async def apply_nightcore(self, requester: discord.Member) -> None:
         """
         Applies the NightCore filter to the player.
@@ -2283,7 +2318,19 @@ class Player(VoiceProtocol):
         self.node.dispatch_event(FiltersAppliedEvent(player=self, requester=requester, node=self.node, **kwargs))
 
     async def _process_filters_reset_not_set(
-        self, channel_mix, distortion, echo, equalizer, karaoke, low_pass, rotation, timescale, tremolo, vibrato, volume
+        self,
+        channel_mix,
+        distortion,
+        echo,
+        equalizer,
+        karaoke,
+        low_pass,
+        rotation,
+        timescale,
+        tremolo,
+        vibrato,
+        volume,
+        reverb,
     ):
         kwargs = {
             "volume": volume or self.volume_filter,
@@ -2296,9 +2343,7 @@ class Player(VoiceProtocol):
             "distortion": distortion,
             "low_pass": low_pass,
             "channel_mix": channel_mix,
-            "pluginFilters": {
-                "echo": echo,
-            },
+            "pluginFilters": {"echo": echo, "reverb": reverb},
         }
         if not equalizer:
             self._equalizer = self._equalizer.default()
@@ -2320,6 +2365,8 @@ class Player(VoiceProtocol):
             self._channel_mix = self._channel_mix.default()
         if not echo:
             self._echo = self._echo.default()
+        if not reverb:
+            self._reverb = self._reverb.default()
         return kwargs
 
     async def _set_filter_variables(
@@ -2336,6 +2383,7 @@ class Player(VoiceProtocol):
         tremolo,
         vibrato,
         volume,
+        reverb,
     ):
         if volume and self.node.has_filter("volume"):
             self._volume = volume
@@ -2368,6 +2416,9 @@ class Player(VoiceProtocol):
             changed = True
         if echo and self.node.has_filter("echo"):
             self._echo = echo
+            changed = True
+        if reverb and self.node.has_filter("reverb"):
+            self._reverb = reverb
             changed = True
         return changed
 
@@ -2843,6 +2894,7 @@ class Player(VoiceProtocol):
                 "low_pass": self._low_pass.to_dict(),
                 "channel_mix": self._channel_mix.to_dict(),
                 "echo": self._echo.to_dict(),
+                "reverb": self._reverb.to_dict(),
             },
             "self_deaf": data["self_deaf"],
             "extras": {
@@ -3128,6 +3180,8 @@ class Player(VoiceProtocol):
             self._channel_mix = f
         if self.node.has_filter("echo") and (v := effects.get("echo", None)) and (f := Echo.from_dict(v)):
             self._echo = f
+        if self.node.has_filter("reverb") and (v := effects.get("reverb", None)) and (f := Reverb.from_dict(v)):
+            self._reverb = f
 
     async def fetch_node_player(self) -> LavalinkPlayer | HTTPException:
         return await self.node.fetch_session_player(self.guild.id)
