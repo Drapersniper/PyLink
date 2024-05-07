@@ -44,3 +44,8 @@ class PlaylistPluginInfo(PluginInfo):
 @dataclass(kw_only=True)
 class TrackPluginInfo(PluginInfo):
     probeInfo: NotRequired[str] | None = field(init=False)
+
+
+@dataclass(kw_only=True)
+class LyricsPluginInfo(PluginInfo):
+    template: NotRequired[str] | None = field(init=False)

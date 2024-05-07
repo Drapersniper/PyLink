@@ -130,57 +130,57 @@ exclude = [
 ]
 [tool.poetry.dependencies]
 python = ">=3.11,<3.12"
-pip = "^23.3.2"
-wheel = "^0.41.3"
+pip = "^24.0"
+wheel = "^0.43.0"
 APScheduler = "^3.10.4"
 Brotli = "^1.1.0"
 PyYAML = "^6.0.1"
-aiohttp-client-cache = "^0.9.1"
+aiohttp-client-cache = "^0.11.0"
 aiopath = "0.6.11"
-asyncpg = "^0.28.0"
+asyncpg = "^0.29.0"
 asyncspotify = "^0.12.1"
-asyncstdlib = "^3.12.0"
+asyncstdlib = "^3.12.3"
 cached-property = "^1.5.2"
-cashews = {extras = ["dill", "redis"], version = "^6.3.0"}
+cashews = {extras = ["dill", "redis"], version = "^7.0.2"}
 dacite = "^1.8.1"
 deepdiff6 = "^6.2.0"
 expiringdict = "^1.2.2"
 humanize = "^4.9.0"
-importlib-metadata = "^6.8.0"
+importlib-metadata = "^7.1.0"
 iso8601 = "^2.1.0"
 mutagen = "^1.47.0"
-netaddr = "^0.9.0"
-numpy = "^1.26.3"
-piccolo = {extras = ["all"], version = "^0.121.0"}
-redis = "^5.0.1"
+netaddr = "^1.2.1"
+numpy = "^1.26.4"
+piccolo = {extras = ["all"], version = "^1.5.0"}
+redis = "^5.0.4"
 tabulate = {extras = ["widechars"], version = "^0.9.0"}
 ujson = "^5.9.0"
-watchfiles = "^0.20.0"
+watchfiles = "^0.21.0"
 
 # Dependencies pre-installed with Red, only required if using PyLav on a Non-Red bot
-Red-Commons = { version = "*", optional = true}
-aiohttp = {extras = ["speedups"], version = "*", optional = true}
-apsw = { version = "*", optional = true}
-orjson = { version = "*", optional = true}
-packaging = { version = "*", optional = true}
-platformdirs = { version = "*", optional = true}
-psutil =  { version = "*", optional = true}
-python-dateutil = { version = "*", optional = true}
-pytz = { version = "*", optional = true}
-rich = { version = "*", optional = true}
-typing-extensions = { version = "*", optional = true}
-rapidfuzz = { version = "*", optional = true}
-uvloop = { version = "*", markers = "sys_platform != 'win32' and platform_python_implementation == 'CPython'", optional = true}
+Red-Commons = { version = "^1.0.0", optional = true}
+aiohttp = {extras = ["speedups"], version = "3.9.3", optional = true}
+apsw = { version = "3.45.2.0", optional = true}
+orjson = { version = "3.10.0", optional = true}
+packaging = { version = "^24.0", optional = true}
+platformdirs = { version = "4.2.0", optional = true}
+psutil =  { version = "^5.9.8", optional = true}
+python-dateutil = { version = "^2.9.0.post0", optional = true}
+pytz = { version = "^2024.1", optional = true}
+rich = { version = "^13.7.1", optional = true}
+typing-extensions = { version = "4.10.0", optional = true}
+rapidfuzz = { version = "3.7.0", optional = true}
+uvloop = { version = "^0.19.0", markers = "sys_platform != 'win32' and platform_python_implementation == 'CPython'", optional = true}
 
 # Dependency for the docs
-Red-DiscordBot = {version = ">=3.5", optional = true}
-furo = { version = "^2023.9.10", optional = true}
-olefile = { version = "^0.46", optional = true}
-sphinx_rtd_theme = { version = "^1.3.0", optional = true}
+Red-DiscordBot = {version = "^3.5.9", optional = true}
+furo = { version = "^2024.4.27", optional = true}
+olefile = { version = "^0.47", optional = true}
+sphinx_rtd_theme = { version = "^2.0.0", optional = true}
 sphinx-copybutton = { version = "^0.5.2", optional = true}
 sphinx-inline-tabs = { version = "^2023.4.21", optional = true}
-sphinx-issues = { version = "^3.0.1", optional = true}
-sphinx-removed-in = { version = "^0.2.1", optional = true}
+sphinx-issues = { version = "^4.1.0", optional = true}
+sphinx-removed-in = { version = "^0.2.2", optional = true}
 
 
 [tool.poetry.extras]
