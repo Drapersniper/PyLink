@@ -1,5 +1,11 @@
 # Changelog
 
+## v1.15.4 (21/05/2024)
+- [Plugin updates](https://github.com/PyLav/PyLav/commit/77d6d4ed26e7d6e232d60b67799fd0d4219b0870) - @Drapersniper
+- [Update docker-compose and pylav.docker.yaml to use the `/data` dir due to perms](https://github.com/PyLav/PyLav/commit/4658518a11bc6220991fd66ed77a05738557b21c) - @Drapersniper
+
+---
+
 ## v1.15.3 (21/05/2024)
 - [Add source prefix to formatted track names](https://github.com/PyLav/PyLav/commit/010f3a482587922ac17fd032b0b38577db53f20e) - @Drapersniper
 - [Auto Merge](https://github.com/PyLav/PyLav/commit/8deb50e45b7c00b076c15ea14f7f464e6a761d2c) - @Drapersniper
@@ -812,16 +818,3 @@
 - [Add a mention to discord to use docker container](https://github.com/Drapersniper/PyLav/commit/20de69c33fce4ada25aadf0dff408870c3981564) - @Drapersniper
 - [add workflow_dispatch: to certain workflows](https://github.com/Drapersniper/PyLav/commit/ea99e761e98570fc719aa8c05202938b54e78f23) - @Drapersniper
 - [Fix crowdin workflows](https://github.com/Drapersniper/PyLav/commit/706c842847a6a9e4e363c67f6698f168e454bb1e) - @Drapersniper
-
----
-
-## v1.0.0 (30/12/2022)
-- [fix release.yml](https://github.com/Drapersniper/PyLav/commit/08d440d79eef207a6a92b6987f394069c01befff) - @Drapersniper
-- [reexport gren token](https://github.com/Drapersniper/PyLav/commit/81b453673c0171dec1c78043cf5733549fbf1311) - @Drapersniper
-- [force token](https://github.com/Drapersniper/PyLav/commit/79447bd5213fa365b5bbf0bfe5a8f892cb644577) - @Drapersniper
-- [reuse poetry cache on changelogs](https://github.com/Drapersniper/PyLav/commit/7d0509ad2c9e9d5611913f1b74c49d01b6dddcee) - @Drapersniper
-- [don't try to publish if already existing](https://github.com/Drapersniper/PyLav/commit/cefc3e668d2c5a422f0090934f9a3c22daa4bac9) - @Drapersniper
-- [Only run release on Ubuntu-latest for now](https://github.com/Drapersniper/PyLav/commit/b2ede0799801e78ad5289d43abe74c0362a72404) - @Drapersniper
-- [Fixes release workflow](https://github.com/Drapersniper/PyLav/commit/7f4e87597d5fb910fb7f283c37ff21abedbaa7d7) - @Drapersniper
-- [Fixes release workflow](https://github.com/Drapersniper/PyLav/commit/fa323e0d5b7c60634e337876759cf1c344720dd9) - @Drapersniper
-- [1 0 0](https://github.com/Drapersniper/PyLav/commit/2b2fac3f4f3da7b790af0728292554410eda00f3) - @Drapersniper
