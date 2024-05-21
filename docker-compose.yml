@@ -46,7 +46,7 @@ services:
     lavalink:
         hostname: lavalink
         container_name: lavalink
-        image: drapersniper/node:latest
+        image: ghcr.io/pylav/node:latest
         restart: always
         volumes:
         # Mount the Lavalink logs folder
