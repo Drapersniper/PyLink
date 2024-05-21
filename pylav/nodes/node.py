@@ -561,11 +561,11 @@ class Node:
             self._filters.add(filterName)
         for plugin in info.plugins:
             match plugin.name:
-                case "SponsorBlock-Plugin":
+                case "sponsorblock-plugin":
                     self._capabilities.add("sponsorblock")
-                case "LavaSearch":
+                case "lavasearch-plugin":
                     self._capabilities.add("lavasearch")
-                case "LavaLyrics":
+                case "lavalyrics-plugin":
                     self._capabilities.add("lavalyrics")
                 case "youtube-plugin":
                     self._capabilities.add("youtube")
@@ -1112,7 +1112,7 @@ class Node:
 
     def get_lyrics(self):
         """Get lyrics of the specified track."""
-        return self.get_endpoint_version() / "lyrics"
+        return self.base_api_url / "lyrics"
 
     # REST API - Direct calls
     async def fetch_session_players(self) -> list[rest_api.LavalinkPlayer] | HTTPException:

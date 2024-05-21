@@ -1,4 +1,3 @@
-version: '3.8'
 volumes:
     pgsocket:
     pgdata:
@@ -17,17 +16,17 @@ services:
         volumes:
         -   pgsocket:/var/run/postgresql # Postgres socket using Docker volume to allow access from other containers without mounting the host's filesystem (I.e use Sockets even on Windows)
         -   redbot:/data # Red data folder
-        -   pylav:/pylav # Pylav folder
+        -   pylav:/data/pylav # Pylav folder
             # Use the pylav.docker.yaml file from https://github.com/PyLav/PyLav/blob/develop/pylav.docker.yaml editing it as necessary.
-        -   ./pylav.docker.yaml:/pylav/pylav.yaml # Pylav config file
+        -   ./pylav.docker.yaml:/data/pylav/pylav.yaml # Pylav config file
         environment:
             TOKEN: your_bot_token_goes_here
             PREFIX: '!'
             TZ: Europe/London
             PUID: 1000
-            PYLAV__DATA_FOLDER: /pylav
-            PYLAV__YAML_CONFIG: /pylav/pylav.yaml
-            PYLAV__LOCAL_TRACKS_FOLDER: /localtracks
+            PYLAV__DATA_FOLDER: /data/pylav
+            PYLAV__YAML_CONFIG: /data/pylav/pylav.yaml
+            PYLAV__LOCAL_TRACKS_FOLDER: /data/localtracks
         depends_on:
         -   postgres # Wait for postgres container to start before starting Red
         -   lavalink # Wait for node container to start before starting Red
@@ -47,7 +46,7 @@ services:
     lavalink:
         hostname: lavalink
         container_name: lavalink
-        image: drapersniper/node:latest
+        image: ghcr.io/pylav/node:latest
         restart: always
         volumes:
         # Mount the Lavalink logs folder
@@ -70,11 +69,11 @@ services:
 
 
             # Plugins to load
-            LAVALINK_PLUGINS_0_DEPENDENCY: com.github.topi314.lavasrc:lavasrc-plugin:4.1.0
+            LAVALINK_PLUGINS_0_DEPENDENCY: com.github.topi314.lavasrc:lavasrc-plugin:4.1.1
             LAVALINK_PLUGINS_1_DEPENDENCY: com.github.topi314.sponsorblock:sponsorblock-plugin:3.0.0
             LAVALINK_PLUGINS_2_DEPENDENCY: com.dunctebot:skybot-lavalink-plugin:1.7.0
             LAVALINK_PLUGINS_3_DEPENDENCY: com.github.topi314.lavasearch:lavasearch-plugin:1.0.0
-            LAVALINK_PLUGINS_4_DEPENDENCY: dev.lavalink.youtube:youtube-plugin:1.1.0
+            LAVALINK_PLUGINS_4_DEPENDENCY: dev.lavalink.youtube:youtube-plugin:1.3.0
             LAVALINK_PLUGINS_5_DEPENDENCY: com.github.topi314.lavalyrics:lavalyrics-plugin:1.0.0
             LAVALINK_PLUGINS_6_DEPENDENCY: me.rohank05:lavalink-filter-plugin:0.0.4
             LAVALINK_PLUGINS_6_REPOSITORY: https://jitpack.io
@@ -147,8 +146,10 @@ services:
             PLUGINS_YOUTUBE_CLIENTS_1: ANDROID
             PLUGINS_YOUTUBE_CLIENTS_2: WEB
             PLUGINS_YOUTUBE_CLIENTS_3: TVHTML5EMBEDDED
-            PLUGINS_YOUTUBE_CLIENTS_4: ANDROID_TESTSUITE
-            PLUGINS_YOUTUBE_CLIENTS_5: IOS
+            PLUGINS_YOUTUBE_CLIENTS_4: ANDROID_LITE
+            PLUGINS_YOUTUBE_CLIENTS_5: ANDROID_TESTSUITE
+            PLUGINS_YOUTUBE_CLIENTS_6: IOS
+            PLUGINS_YOUTUBE_CLIENTS_7: MEDIA_CONNECT
 
             # Configure DuncteBot Plugin
             PLUGINS_DUNCTEBOT_SOURCES_CLYPIT: true
@@ -163,9 +164,9 @@ services:
             PLUGINS_DUNCTEBOT_TTSLANGUAGE: en-US
 
             # Configure LavaLyrics Plugin
-            PLUGINS_LAVALYRICS_SOURCES_0: spotify
-            PLUGINS_LAVALYRICS_SOURCES_1: youtube
-            PLUGINS_LAVALYRICS_SOURCES_2: deezer
+            PLUGINS_LAVALYRICS_SOURCES_0: youtube
+            PLUGINS_LAVALYRICS_SOURCES_1: deezer
+            # PLUGINS_LAVALYRICS_SOURCES_2: spotify  # There are issues with the spotify lyrics at the moment
 
             # Configure LavaSrc Plugin
             # The Track search order (Deezer ISRC, YouTube Music ISRC, YouTube ISRC, YouTube Music Query, YouTube Query, Deezer Query, SoundCloud Query)
@@ -202,6 +203,9 @@ services:
             # Lavasrc Yandex configuration
             PLUGINS_LAVASRC_SOURCES_YANDEXMUSIC: false        # Enable Yandex Music source
             PLUGINS_LAVASRC_YANDEXMUSIC_ACCESSTOKEN:          # the token used for accessing the yandex music api. See https://github.com/topi314/LavaSrc#yandex-music
+            PLUGINS_LAVASRC_YANDEXMUSIC_PLAYLISTLOADLIMIT: 1  # The number of pages at 50 tracks each
+            PLUGINS_LAVASRC_YANDEXMUSIC_ALBUMLOADLIMIT: 1     # The number of pages at 50 tracks each
+            PLUGINS_LAVASRC_YANDEXMUSIC_ARTISTLOADLIMIT: 1    # The number of pages at 50 tracks each
 
             # Lavasrc YouTube configuration
             PLUGINS_LAVASRC_SOURCES_YOUTUBE: true  # Enable YouTube Search source
@@ -215,6 +219,10 @@ services:
             PLUGINS_LAVASRC_FLOWERYTTS_SPEED: 1.0 # the speed parameter is a float between 0.5 and 10. The default is 1.0. (0.5 is half speed, 2.0 is double speed, etc.)
             PLUGINS_LAVASRC_FLOWERYTTS_AUDIOFORMAT: mp3 # supported formats are: mp3, ogg_opus, ogg_vorbis, aac, wav, and flac. Default format is mp3
 
+            # Lavasrc Lyrics configuration
+            PLUGINS_LAVASRC_LYRICSSOURCES_SPOTIFY: false
+            PLUGINS_LAVASRC_LYRICSSOURCES_DEEZER: true
+            PLUGINS_LAVASRC_LYRICSSOURCES_YOUTUBE: true
 
             # Configure Sentry
             SENTRY_DSN:

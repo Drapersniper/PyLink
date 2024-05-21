@@ -49,3 +49,34 @@ PORT = discord.PartialEmoji(name="port", animated=False, id=969676962824069200)
 PASSWORD = discord.PartialEmoji(name="password", animated=False, id=969690513911459910)
 # noinspection SpellCheckingInspection
 CLOUD_SERVER = discord.PartialEmoji(name="cloudserver", animated=False, id=972827895900811337)
+TWITCH = discord.PartialEmoji(name="twitch", animated=False, id=1242468311221141644)
+VIMEO = discord.PartialEmoji(name="vimeo", animated=False, id=1242467993024335882)
+BANDCAMP = discord.PartialEmoji(name="bandcamp", animated=False, id=1242467626194702356)
+# noinspection SpellCheckingInspection
+MUSIC_CLOUD = discord.PartialEmoji(name="musiccloud", animated=False, id=1242467624848195756)
+# noinspection SpellCheckingInspection
+YANDEX_MUSIC = discord.PartialEmoji(name="yandexmusic", animated=False, id=1242467130008535050)
+TIKTOK = discord.PartialEmoji(name="tiktok", animated=False, id=1242471341647466578)
+NICONICO = discord.PartialEmoji(name="niconico", animated=False, id=1242471325113516043)
+YOUTUBE = discord.PartialEmoji(name="youtube", animated=False, id=1242471276455395462)
+# noinspection SpellCheckingInspection
+SPEAKING_HEAD = discord.PartialEmoji(name="tts", animated=False, id=1242472808164884501)
+SPOTIFY = discord.PartialEmoji(name="spotify", animated=False, id=1242471269035802746)
+SOUNDCLOUD = discord.PartialEmoji(name="soundcloud", animated=False, id=1242471263524618272)
+PORNHUB = discord.PartialEmoji(name="pornhub", animated=False, id=1242471259942424756)
+# noinspection SpellCheckingInspection
+GETYARN = discord.PartialEmoji(name="getyarn", animated=False, id=1242471256742170706)
+# noinspection SpellCheckingInspection
+OCRMIX = discord.PartialEmoji(name="ocrmix", animated=False, id=1242471255492399114)
+HTTP = discord.PartialEmoji(name="http", animated=False, id=1242471254372651089)
+# noinspection SpellCheckingInspection
+GOOGLETTS = discord.PartialEmoji(name="googletts", animated=False, id=1242471253227339806)
+FLOWERY = discord.PartialEmoji(name="flowery", animated=False, id=1242471252099203212)
+DEEZER = discord.PartialEmoji(name="deezer", animated=False, id=1242471250467754058)
+# noinspection SpellCheckingInspection
+APPLEMUSIC = discord.PartialEmoji(name="applemusic", animated=False, id=1242471249339482272)
+REDDIT = discord.PartialEmoji(name="reddit", animated=False, id=1242473151561203842)
+# noinspection SpellCheckingInspection
+SOUNDGASM = discord.PartialEmoji(name="soundgasm", animated=False, id=1242471266607435959)
+# noinspection SpellCheckingInspection
+CLIPIT = discord.PartialEmoji(name="clipit", animated=False, id=1242471247946973297)

@@ -18,7 +18,7 @@ from dacite import from_dict
 
 from pylav.constants.regex import SQUARE_BRACKETS, STREAM_TITLE
 from pylav.exceptions.track import TrackNotFoundException
-from pylav.nodes.api.responses import rest_api
+from pylav.helpers import emojis
 from pylav.nodes.api.responses.playlists import Info
 from pylav.nodes.api.responses.track import Track as APITrack
 from pylav.players.query.obj import Query
@@ -28,7 +28,6 @@ if typing.TYPE_CHECKING:
     from pylav.core.client import Client
     from pylav.nodes.node import Node
     from pylav.players.player import Player
-
 
 __CLIENT: Client | None = None
 
@@ -804,6 +803,7 @@ class Track:
         author: bool = True,
         with_url: bool = False,
         escape: bool = True,
+        with_emoji: bool = True,
     ) -> str:
         track_name = await self.get_full_track_display_name(
             max_length=max_length if with_url and max_length is None else (max_length - 8), author=author
@@ -811,6 +811,9 @@ class Track:
         track_name = self._maybe_escape_markdown(text=track_name, escape=escape)
         if with_url and ((query := await self.query()) and not query.is_local):
             track_name = f"**[{track_name}]({await self.uri()})**"
+        if with_emoji:
+            emoji = await self.get_emoji_prefix()
+            return f"{emoji}{track_name}"
         return track_name
 
     async def get_full_track_display_name(self, max_length: int | None = None, author: bool = True) -> str:
@@ -873,3 +876,54 @@ class Track:
         if not (identifier := await self.identifier()):
             return None
         return await self.__CLIENT.generate_mix_playlist(video_id=identifier)
+
+    async def get_emoji_prefix(self) -> str:
+        match await self.source():
+            case "spotify":
+                return f"{emojis.SPOTIFY} "
+            case "youtube":
+                return f"{emojis.YOUTUBE} "
+            case "soundcloud":
+                return f"{emojis.SOUNDCLOUD} "
+            case "deezer":
+                return f"{emojis.DEEZER} "
+            case "applemusic":
+                return f"{emojis.APPLEMUSIC} "
+            case "local":
+                return f"{emojis.FOLDER} "
+            case "speak":
+                return f"{emojis.SPEAKING_HEAD} "
+            case "flowery-tts":
+                return f"{emojis.FLOWERY} "
+            case "gcloud-tts":
+                return f"{emojis.GOOGLETTS} "
+            case "http":
+                return f"{emojis.HTTP} "
+            case "twitch":
+                return f"{emojis.TWITCH} "
+            case "vimeo":
+                return f"{emojis.VIMEO} "
+            case "bandcamp":
+                return f"{emojis.BANDCAMP} "
+            case "mixcloud":
+                return f"{emojis.MUSIC_CLOUD} "
+            case "getyarn.io":
+                return f"{emojis.GETYARN} "
+            case "ocremix":
+                return f"{emojis.OCRMIX} "
+            case "reddit":
+                return f"{emojis.REDDIT} "
+            case "clypit":
+                return f"{emojis.CLIPIT} "
+            case "pornhub":
+                return f"{emojis.PORNHUB} "
+            case "soundgasm":
+                return f"{emojis.SOUNDGASM} "
+            case "tiktok":
+                return f"{emojis.TIKTOK} "
+            case "niconico":
+                return f"{emojis.NICONICO} "
+            case "yandexmusic":
+                return f"{emojis.YANDEX_MUSIC} "
+            case __:
+                return ":interrobang: "

@@ -1,11 +1,11 @@
 lavalink:
     plugins:
-    -   dependency: com.github.topi314.lavasrc:lavasrc-plugin:4.1.0
+    -   dependency: com.github.topi314.lavasrc:lavasrc-plugin:4.1.1
     -   dependency: com.github.topi314.sponsorblock:sponsorblock-plugin:3.0.0
     -   dependency: com.dunctebot:skybot-lavalink-plugin:1.7.0
     -   dependency: com.github.topi314.lavasearch:lavasearch-plugin:1.0.0
     -   dependency: com.github.topi314.lavalyrics:lavalyrics-plugin:1.0.0
-    -   dependency: dev.lavalink.youtube:youtube-plugin:1.1.0
+    -   dependency: dev.lavalink.youtube:youtube-plugin:1.3.0
     -   dependency: me.rohank05:lavalink-filter-plugin:0.0.4
         repository: https://jitpack.io
     -   dependency: com.github.esmBot:lava-xm-plugin:v0.2.2
@@ -58,7 +58,18 @@ lavalink:
 plugins:
     youtube:
         enabled: true
-        clients: [MUSIC, ANDROID, WEB, TVHTML5EMBEDDED, ANDROID_TESTSUITE, IOS]
+        clients: [MUSIC, ANDROID, WEB, TVHTML5EMBEDDED, ANDROID_LITE, ANDROID_TESTSUITE, IOS, MEDIA_CONNECT]
+        allowSearch: true # Whether "ytsearch:" and "ytmsearch:" can be used.
+        allowDirectVideoIds: false # Whether just video IDs can match. If false, only complete URLs will be loaded.
+        allowDirectPlaylistIds: false # Whether just playlist IDs can match. If false, only complete URLs will be loaded.
+        WEB: # names are specified as they are written below under "Available Clients".
+          # This will disable using the WEB client for video playback.
+            playback: false
+        TVHTML5EMBEDDED:
+          # The below config disables everything except playback for this client.
+            playlistLoading: false # Disables loading of playlists and mixes for this client.
+            videoLoading: false # Disables loading of videos for this client (playback is still allowed).
+            searching: false # Disables the ability to search for videos for this client.
     dunctebot:
         sources:
             getyarn: true # www.getyarn.io
@@ -74,7 +85,7 @@ plugins:
     lavalyrics:
         # sources is used to sort the different lyrics sources by priority (from highest to lowest)
         sources:
-        -   spotify
+#         -   spotify  # There are issues without spotify lyrics at the moment
         -   youtube
         -   deezer
     lavasrc:
