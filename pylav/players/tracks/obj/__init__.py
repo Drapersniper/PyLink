@@ -29,7 +29,6 @@ if typing.TYPE_CHECKING:
     from pylav.nodes.node import Node
     from pylav.players.player import Player
 
-
 __CLIENT: Client | None = None
 
 
@@ -814,7 +813,7 @@ class Track:
             track_name = f"**[{track_name}]({await self.uri()})**"
         if with_emoji:
             emoji = await self.get_emoji_prefix()
-            return f"{emoji} {track_name}"
+            return f"{emoji}{track_name}"
         return track_name
 
     async def get_full_track_display_name(self, max_length: int | None = None, author: bool = True) -> str:
@@ -881,50 +880,50 @@ class Track:
     async def get_emoji_prefix(self) -> str:
         match await self.source():
             case "spotify":
-                return emojis.SPOTIFY
+                return f"{emojis.SPOTIFY} "
             case "youtube":
-                return emojis.YOUTUBE
+                return f"{emojis.YOUTUBE} "
             case "soundcloud":
-                return emojis.SOUNDCLOUD
+                return f"{emojis.SOUNDCLOUD} "
             case "deezer":
-                return emojis.DEEZER
+                return f"{emojis.DEEZER} "
             case "applemusic":
-                return emojis.APPLEMUSIC
+                return f"{emojis.APPLEMUSIC} "
             case "local":
-                return emojis.FOLDER
+                return f"{emojis.FOLDER} "
             case "speak":
-                return emojis.SPEAKING_HEAD
+                return f"{emojis.SPEAKING_HEAD} "
             case "flowery-tts":
-                return emojis.FLOWERY
+                return f"{emojis.FLOWERY} "
             case "gcloud-tts":
-                return emojis.GOOGLETTS
+                return f"{emojis.GOOGLETTS} "
             case "http":
-                return emojis.HTTP
+                return f"{emojis.HTTP} "
             case "twitch":
-                return emojis.TWITCH
+                return f"{emojis.TWITCH} "
             case "vimeo":
-                return emojis.VIMEO
+                return f"{emojis.VIMEO} "
             case "bandcamp":
-                return emojis.BANDCAMP
+                return f"{emojis.BANDCAMP} "
             case "mixcloud":
-                return emojis.MUSIC_CLOUD
+                return f"{emojis.MUSIC_CLOUD} "
             case "getyarn.io":
-                return emojis.GETYARN
+                return f"{emojis.GETYARN} "
             case "ocremix":
-                return emojis.OCRMIX
+                return f"{emojis.OCRMIX} "
             case "reddit":
-                return emojis.REDDIT
+                return f"{emojis.REDDIT} "
             case "clypit":
-                return emojis.CLIPIT
+                return f"{emojis.CLIPIT} "
             case "pornhub":
-                return emojis.PORNHUB
+                return f"{emojis.PORNHUB} "
             case "soundgasm":
-                return emojis.SOUNDGASM
+                return f"{emojis.SOUNDGASM} "
             case "tiktok":
-                return emojis.TIKTOK
+                return f"{emojis.TIKTOK} "
             case "niconico":
-                return emojis.NICONICO
+                return f"{emojis.NICONICO} "
             case "yandexmusic":
-                return emojis.YANDEX_MUSIC
+                return f"{emojis.YANDEX_MUSIC} "
             case __:
-                return ":interrobang:"
+                return ":interrobang: "

@@ -71,6 +71,7 @@ from pylav.helpers.time import get_now_utc
 from pylav.logging import getLogger
 from pylav.nodes.api.responses.exceptions import LavalinkException
 from pylav.nodes.api.responses.player import State
+from pylav.nodes.api.responses.plugins import LyricsObject
 from pylav.nodes.api.responses.rest_api import LavalinkPlayer
 from pylav.nodes.api.responses.track import Track as APITrack
 from pylav.nodes.api.responses.websocket import TrackException
@@ -3227,3 +3228,12 @@ class Player(VoiceProtocol):
             return []
         categories = await self.node.get_session_player_sponsorblock_categories(guild_id=self.guild.id)
         return categories if isinstance(categories, list) else []
+
+    async def get_lyrics(self, skipTrackSource: bool = False) -> str | None:
+        if not self.current:
+            return None
+        node = await self.node.node_manager.find_best_node(feature="lavalyrics")
+        lyrics = await node.fetch_current_lyrics(self.guild.id, skipTrackSource)
+        if not isinstance(lyrics, LyricsObject):
+            return None
+        return lyrics.text
