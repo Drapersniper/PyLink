@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: pylav\n"
-"POT-Creation-Date: 2023-05-17 19:31+0000\n"
-"PO-Revision-Date: 2024-05-19 12:55\n"
+"POT-Creation-Date: 2024-05-21 18:24+0000\n"
+"PO-Revision-Date: 2024-05-21 18:25\n"
 "Last-Translator: \n"
 "Language-Team: Italian\n"
 "MIME-Version: 1.0\n"
@@ -43,6 +43,18 @@ msgstr "Pagina 1 / 1 | 0 voci"
 #: pylav/extension/red/ui/sources/nodes.py:58
 msgid "Page {current_page_variable_do_not_translate} / {total_number_of_pages_variable_do_not_translate} | {total_number_of_entries_variable_do_not_translate} entries"
 msgstr "Pagina {current_page_variable_do_not_translate} / {total_number_of_pages_variable_do_not_translate} | {total_number_of_entries_variable_do_not_translate} Voci"
+
+#: pylav/extension/red/ui/sources/lyrics.py:44
+msgid "Page 1 / 1 | 1 Page"
+msgstr "Pagina 1 / 1 <unk> 1 Pagina"
+
+#: pylav/extension/red/ui/sources/lyrics.py:46
+msgid "Page 1 / 1 | 0 Pages"
+msgstr "Pagina 1 / 1 <unk> 0 Pagine"
+
+#: pylav/extension/red/ui/sources/lyrics.py:48
+msgid "Page {current_page_variable_do_not_translate} / {total_number_of_pages_variable_do_not_translate} | {total_number_of_entries_variable_do_not_translate} Pages"
+msgstr "Pagina {current_page_variable_do_not_translate} / {total_number_of_pages_variable_do_not_translate} <unk> {total_number_of_entries_variable_do_not_translate} Pagine"
 
 #: pylav/extension/red/ui/sources/nodes.py:106
 #: pylav/extension/red/ui/sources/nodes.py:270
