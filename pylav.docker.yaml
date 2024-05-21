@@ -35,5 +35,5 @@ PYLAV__TASK_TIMER_UPDATE_EXTERNAL_PLAYLISTS_DAYS: 7         # How many days to w
 PYLAV__READ_CACHING_ENABLED: false # Whether to cache the postgres queries - Values are `true` or `false` - case sensitive
 
 PYLAV__PREFER_PARTIAL_TRACKS: false              # PyLav will search for tracks only when it is necessary for it to be played rather than as soon as possible.
-PYLAV__LOCAL_TRACKS_FOLDER: /localtracks  # The folder where local tracks are stored.
-PYLAV__DATA_FOLDER: /pylav                # The folder where the config files are stored - Leave null to use a OS appropriate default
+PYLAV__LOCAL_TRACKS_FOLDER: /data/localtracks  # The folder where local tracks are stored.
+PYLAV__DATA_FOLDER: /data/pylav                # The folder where the config files are stored - Leave null to use a OS appropriate default
