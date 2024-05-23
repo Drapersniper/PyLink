@@ -49,6 +49,7 @@ from pylav.constants.regex import (
     SOURCE_INPUT_MATCH_VIMEO,
     SOURCE_INPUT_MATCH_YANDEX,
     SOURCE_INPUT_MATCH_YOUTUBE,
+    SOURCE_INPUT_MATCH_YOUTUBE_SHORT,
 )
 from pylav.extension.m3u import load as m3u_loads
 from pylav.players.query.local_files import LocalFile
@@ -325,8 +326,10 @@ class Query:
 
     @classmethod
     def __process_urls(cls, query: str) -> Query | None:  # sourcery skip: low-code-quality
-        if match := SOURCE_INPUT_MATCH_YOUTUBE.match(query):
-            music = match.group("youtube_music")
+        if (match := SOURCE_INPUT_MATCH_YOUTUBE.match(query)) or (
+            match := SOURCE_INPUT_MATCH_YOUTUBE_SHORT.match(query)
+        ):
+            music = match.group("youtube_music") or match.group("youtube_music_short")
             return process_youtube(cls, query, music=bool(music))
         elif SOURCE_INPUT_MATCH_SPOTIFY.match(query):
             return process_spotify(cls, query)
