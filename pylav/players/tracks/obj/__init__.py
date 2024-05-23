@@ -803,7 +803,7 @@ class Track:
         author: bool = True,
         with_url: bool = False,
         escape: bool = True,
-        with_emoji: bool = True,
+        with_emoji: bool = False,
     ) -> str:
         track_name = await self.get_full_track_display_name(
             max_length=max_length if with_url and max_length is None else (max_length - 8), author=author

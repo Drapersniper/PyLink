@@ -31,7 +31,7 @@ class LyricsSource(menus.ListPageSource):
         total_number_of_entries = len(self.entries)
         current_page = humanize_number(page_num + 1)
         total_number_of_pages = humanize_number(self.get_max_pages())
-        title = f"{await self.track.get_emoji_prefix()}{await self.track.title()}"
+        title = f"{await self.track.title()}"
         page = await self.cog.pylav.construct_embed(
             messageable=menu.ctx,
             title=title,
@@ -46,7 +46,8 @@ class LyricsSource(menus.ListPageSource):
                 message = _("Page 1 / 1 | 0 Pages")
             case __:
                 message = _(
-                    "Page {current_page_variable_do_not_translate} / {total_number_of_pages_variable_do_not_translate} | {total_number_of_entries_variable_do_not_translate} Pages"
+                    "Page {current_page_variable_do_not_translate} / {total_number_of_pages_variable_do_not_translate} "
+                    "| {total_number_of_entries_variable_do_not_translate} Pages"
                 ).format(
                     current_page_variable_do_not_translate=current_page,
                     total_number_of_pages_variable_do_not_translate=total_number_of_pages,
