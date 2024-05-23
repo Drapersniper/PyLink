@@ -1,5 +1,13 @@
 # Changelog
 
+## v1.15.6 (23/05/2024)
+- [Disable emoji prefix](https://github.com/PyLav/PyLav/commit/f4a4246b0219d929a1b5c3160d89d6b5b9bf6b9d) - @Drapersniper
+- [Update PyLav track regex](https://github.com/PyLav/PyLav/commit/cf19ef6262ec3d4e8d4099dff4d68164a46dff07) - @Drapersniper
+- [Auto Merge](https://github.com/PyLav/PyLav/commit/cf9d7c70713b3baaeaff3a70697d92f48b216997) - @Drapersniper
+- [New Crowdin translations by GitHub Action](https://github.com/PyLav/PyLav/commit/e31a1b62faa4d448db40727b61ed56675dffa108) - @crowdin-bot
+
+---
+
 ## v1.15.5 (21/05/2024)
 - [Fix LavaLyrics implementation](https://github.com/PyLav/PyLav/commit/6268a6fc86b48d8ddc38a9d6e52ef5a0d7cb354f) - @Drapersniper
 - [Update PyLav Lavalink image reference](https://github.com/PyLav/PyLav/commit/8bf6955eab08ccf84e2e83c4547e9f9cb4030b71) - @Drapersniper
@@ -807,10 +815,3 @@
 - [Add a workflow dispatch to PyLav-Cogs](https://github.com/Drapersniper/PyLav/commit/ad3b246c5d7c50eb821036ae20fbbc3bdfea6c25) - @Drapersniper
 - [fix versioning](https://github.com/Drapersniper/PyLav/commit/9683e6d8702b20e24a42dc517623d8c04c10cdcf) - @Drapersniper
 - [Sourcery](https://github.com/Drapersniper/PyLav/commit/9dc5bb339e1963f12a0c0860d89a98d3a4bc6f6a) - @Drapersniper
-
----
-
-## v1.0.2 (01/01/2023)
-- [Cleanup](https://github.com/Drapersniper/PyLav/commit/5b734b8408c159c38a09060aec991192a5f4b849) - @Drapersniper
-- [Cleanup](https://github.com/Drapersniper/PyLav/commit/bfa1d4f4e2d75b28444076a0030632bccf4785e8) - @Drapersniper
-- [Clarification in the SETUP.md](https://github.com/Drapersniper/PyLav/commit/950d642586a8188c07f0752e0ef9bb6d287460da) - @Drapersniper
