@@ -46,39 +46,44 @@ LAVALINK__READY_LINE = re.compile(rb"Lavalink is ready to accept connections")
 LAVALINK_FAILED_TO_START = re.compile(rb"Web server failed to start\. (.*)")
 
 # noinspection SpellCheckingInspection
-SOURCE_INPUT_MATCH_CLYPIT = re.compile(r"(http://|https://(www.)?)?clyp\.it/(.*)", re.IGNORECASE)
+# https://github.com/DuncteBot/skybot-lavalink-plugin/blob/master/source-managers/src/main/java/com/dunctebot/sourcemanagers/clypit/ClypitAudioSourceManager.java
+SOURCE_INPUT_MATCH_CLYPIT = re.compile(r"^(http://|https://(www\.)?)?clyp\.it/(.*)", re.IGNORECASE)
 # noinspection SpellCheckingInspection
-# https://github.com/Walkyst/lavaplayer-fork/blob/custom/main/src/main/java/com/sedmelluq/discord/lavaplayer/source/getyarn/GetyarnAudioSourceManager.java#L38
-SOURCE_INPUT_MATCH_GETYARN = re.compile(r"(?:http://|https://(?:www.)?)?getyarn.io/yarn-clip/(.*)", re.IGNORECASE)
+# https://github.com/DuncteBot/skybot-lavalink-plugin/blob/master/source-managers/src/main/java/com/dunctebot/sourcemanagers/getyarn/GetyarnAudioSourceManager.java
+SOURCE_INPUT_MATCH_GETYARN = re.compile(r"^(?:http://|https://(?:www\.)?)?getyarn\.io/yarn-clip/(.*)", re.IGNORECASE)
+# https://github.com/DuncteBot/skybot-lavalink-plugin/blob/master/source-managers/src/main/java/com/dunctebot/sourcemanagers/mixcloud/MixcloudAudioSourceManager.java
 SOURCE_INPUT_MATCH_MIXCLOUD = re.compile(
-    r"https?://(?:(?:www|beta|m)\.)?mixcloud.com/([^/]+)/(?!stream|uploads|favorites|listens|playlists)([^/]+)/?",
+    r"^https?://(?:(?:www|beta|m)\.)?mixcloud\.com/([^/]+)/(?!stream|uploads|favorites|listens|playlists)([^/]+)/?",
     re.IGNORECASE,
 )
 # noinspection SpellCheckingInspection
+# https://github.com/DuncteBot/skybot-lavalink-plugin/blob/master/source-managers/src/main/java/com/dunctebot/sourcemanagers/ocremix/OCRemixAudioSourceManager.java
 SOURCE_INPUT_MATCH_OCRREMIX = re.compile(
-    r"(?:https?://(?:www\.)?ocremix\.org/remix/)?(?P<ocrmix_id>OCR\d+)(?:.*)?", re.IGNORECASE
+    r"^(?:https?://(?:www\.)?ocremix\.org/remix/)?(?P<ocrmix_id>OCR[\d]+)(?:.*)?", re.IGNORECASE
 )
+# https://github.com/DuncteBot/skybot-lavalink-plugin/blob/master/source-managers/src/main/java/com/dunctebot/sourcemanagers/pornhub/PornHubAudioSourceManager.java
 SOURCE_INPUT_MATCH_PORNHUB = re.compile(
-    r"^https?://([a-z]+.)?pornhub\.(com|net)/view_video\.php\?viewkey=([a-zA-Z\d]+).*$", re.IGNORECASE
+    r"^https?://([a-z]+\.)?pornhub\.(com|net|org)/view_video\.php\?viewkey=([a-zA-Z0-9]+)(?:.*)$", re.IGNORECASE
 )
+# https://github.com/DuncteBot/skybot-lavalink-plugin/blob/master/source-managers/src/main/java/com/dunctebot/sourcemanagers/reddit/RedditAudioSourceManager.java
 SOURCE_INPUT_MATCH_REDDIT = re.compile(
-    r"https://(?:www|old)\.reddit\.com/"
-    r"r/[^/]+/[^/]+/([^/]+)"
-    r"(?:/?(?:[^/]+)?/?)?|"
-    r"https://v\.redd\.it/([^/]+)(?:.*)?",
+    r"^https://(?:www|old)\.reddit\.com/r/(?:[^\\/]+)\\/(?:[^/]+)/([^/]+)(?:/?(?:[^/]+)?/?)?|"
+    r"^https://v\.redd\.it/([^/]+)(?:.*)?",
     re.IGNORECASE,
 )
 # noinspection SpellCheckingInspection
+# https://github.com/DuncteBot/skybot-lavalink-plugin/blob/master/source-managers/src/main/java/com/dunctebot/sourcemanagers/soundgasm/SoundGasmAudioSourceManager.java
 SOURCE_INPUT_MATCH_SOUNDGASM = re.compile(
-    r"https?://soundgasm\.net/u/(?P<soundgasm_path>(?P<soundgasm_author>[^/]+)/[^/]+)", re.IGNORECASE
+    r"^https?://soundgasm\.net/u/(?P<soundgasm_path>(?P<soundgasm_author>[^/]+)/[^/]+)", re.IGNORECASE
 )
+# https://github.com/DuncteBot/skybot-lavalink-plugin/blob/master/source-managers/src/main/java/com/dunctebot/sourcemanagers/tiktok/TikTokAudioSourceManager.java
 SOURCE_INPUT_MATCH_TIKTOK = re.compile(
-    r"^https://(?:www\.|m\.)?tiktok\.com/@(?P<tiktok_user>[^/]+)/video/(?P<tiktok_video>\d+).*$", re.IGNORECASE
+    r"^https://(?:www\.|m\.)?tiktok\.com/@(?P<tiktok_user>[^/]+)/video/(?P<tiktok_video>[0-9]+)(?:.*)$", re.IGNORECASE
 )
 
 # https://github.com/topi314/LavaSrc/blob/master/main/src/main/java/com/github/topi314/lavasrc/spotify/SpotifySourceManager.java#L39
 SOURCE_INPUT_MATCH_SPOTIFY = re.compile(
-    r"(https?://)(www\.)?open\.spotify\.com/("
+    r"^(https?://)(www\.)?open\.spotify\.com/("
     r"(?P<spotify_region>[a-zA-Z-]+)/)?(user/"
     r"(?P<spotify_user>[a-zA-Z\d\-_]+)/)?"
     r"(?P<spotify_type>track|album|playlist|artist)/"
@@ -87,38 +92,30 @@ SOURCE_INPUT_MATCH_SPOTIFY = re.compile(
 )
 # https://github.com/topi314/LavaSrc/blob/master/main/src/main/java/com/github/topi314/lavasrc/applemusic/AppleMusicSourceManager.java#L33
 SOURCE_INPUT_MATCH_APPLE_MUSIC = re.compile(
-    r"(https?://)?(www\.)?music\.apple\.com/(?P<amcountrycode>[a-zA-Z]{2}/)?"
-    r"(?P<type>album|playlist|artist|song)(/[a-zA-Z\d\-]+)?/"
-    r"(?P<identifier>[a-zA-Z\d\-.]+)"
-    r"(\?i=(?P<identifier2>\d+))?",
+    r"^(https?://)?(www\.)?music\.apple\.com/(?P<amcountrycode>[a-zA-Z]{2}/)?(?P<type>album|playlist|artist|song)(/[a-zA-Z\d\-]+)?/(?P<identifier>[a-zA-Z\d\-.]+)(\?i=(?P<identifier2>\d+))?",
     re.IGNORECASE,
 )
-# https://github.com/Walkyst/lavaplayer-fork/blob/custom/main/src/main/java/com/sedmelluq/discord/lavaplayer/source/bandcamp/BandcampAudioSourceManager.java#L39
+# https://github.com/lavalink-devs/lavaplayer/tree/main/main/src/main/java/com/sedmelluq/discord/lavaplayer/source/bandcamp/BandcampAudioSourceManager.java#L39
 SOURCE_INPUT_MATCH_BANDCAMP = re.compile(
-    r"^(https?://(?:[^.]+\.|)bandcamp\.com)/(track|album)/([a-zA-Z\d\-_]+)/?(?:\?.*|)$", re.IGNORECASE
+    r"^(https?://(?:[^.]+\.|)bandcamp\.com)/(track|album)/([a-zA-Z0-9-_]+)/?(?:\?.*|)$", re.IGNORECASE
 )
-# https://github.com/Walkyst/lavaplayer-fork/blob/custom/main/src/main/java/com/sedmelluq/discord/lavaplayer/source/nico/NicoAudioSourceManager.java#L47
+# https://github.com/lavalink-devs/lavaplayer/tree/main/main/src/main/java/com/sedmelluq/discord/lavaplayer/source/nico/NicoAudioSourceManager.java#L47
 SOURCE_INPUT_MATCH_NICONICO = re.compile(
-    r"(?:http://|https://|)(?:www\.|)nicovideo\.jp/watch/(sm\d+)(?:\?.*|)$", re.IGNORECASE
+    r"^(?:http://|https://|)(?:www\.|)nicovideo\.jp/watch/(.{2}[0-9]+)(?:\?.*|)$", re.IGNORECASE
 )
-# https://github.com/Walkyst/lavaplayer-fork/blob/custom/main/src/main/java/com/sedmelluq/discord/lavaplayer/source/twitch/TwitchStreamAudioSourceManager.java#L43
-SOURCE_INPUT_MATCH_TWITCH = re.compile(r"^https://(?:www\.|go\.)?twitch\.tv/([^/]+)$", re.IGNORECASE)
-# https://github.com/Walkyst/lavaplayer-fork/blob/custom/main/src/main/java/com/sedmelluq/discord/lavaplayer/source/vimeo/VimeoAudioSourceManager.java#L39
-SOURCE_INPUT_MATCH_VIMEO = re.compile(r"^https://vimeo.com/\d+(?:\?.*|)$", re.IGNORECASE)
+# https://github.com/lavalink-devs/lavaplayer/tree/main/main/src/main/java/com/sedmelluq/discord/lavaplayer/source/twitch/TwitchStreamAudioSourceManager.java#L43
+SOURCE_INPUT_MATCH_TWITCH = re.compile(r"^https://(?:www\.|go\.|m\.)?twitch.tv/([^/]+)$", re.IGNORECASE)
+# https://github.com/lavalink-devs/lavaplayer/tree/main/main/src/main/java/com/sedmelluq/discord/lavaplayer/source/vimeo/VimeoAudioSourceManager.java#L39
+SOURCE_INPUT_MATCH_VIMEO = re.compile(r"^https://vimeo.com/[0-9]+(?:\?.*|)$", re.IGNORECASE)
 
 # noinspection LongLine
+# https://github.com/lavalink-devs/lavaplayer/blob/main/main/src/main/java/com/sedmelluq/discord/lavaplayer/source/soundcloud/SoundCloudAudioSourceManager.java
 SOURCE_INPUT_MATCH_SOUND_CLOUD = re.compile(
     r"^(?:http://|https://|)soundcloud\.app\.goo\.gl/([a-zA-Z0-9-_]+)/?(?:\?.*|)$|"
-    r"^(?:http://|https://|)(?:www\.|)(?:m\.|)soundcloud\.com/"
-    r"([a-zA-Z0-9-_]+)/([a-zA-Z0-9-_]+)/?(?:\?.*|)$|"
-    r"^(?:http://|https://|)(?:www\.|)(?:m\.|)soundcloud\.com/"
-    r"([a-zA-Z0-9-_]+)/([a-zA-Z0-9-_]+)/s-([a-zA-Z0-9-_]+)(?:\?.*|)$|"
-    r"^(?:http://|https://|)(?:www\.|)(?:m\.|)soundcloud\.com/"
-    r"([a-zA-Z0-9-_]+)/likes/?(?:\?.*|)$|"
-    r"^(?:http://|https://|)(?:www\.|)(?:m\.|)soundcloud\.com/"
-    r"([a-zA-Z0-9-_]+)/([a-zA-Z0-9-_]+)/([a-zA-Z0-9-_]+)(?:\?.*|)$",
-    # This last line was manually added and does not exist in lavaplayer...
-    # https://github.com/Walkyst/lavaplayer-fork/blob/custom/main/src/main/java/com/sedmelluq/discord/lavaplayer/source/soundcloud/SoundCloudAudioSourceManager.java
+    r"^(?:http://|https://|)(?:www\.|)(?:m\.|)soundcloud\.com/([a-zA-Z0-9-_]+)/([a-zA-Z0-9-_]+)/?(?:\?.*|)$|"
+    r"^https://on.soundcloud\.com/[a-zA-Z0-9-_]+/?(?:\?.*|)$|"
+    r"^(?:http://|https://|)(?:www\.|)(?:m\.|)soundcloud\.com/([a-zA-Z0-9-_]+)/([a-zA-Z0-9-_]+)/s-([a-zA-Z0-9-_]+)(?:\?.*|)$|"
+    r"^(?:http://|https://|)(?:www\.|)(?:m\.|)soundcloud\.com/([a-zA-Z0-9-_]+)/likes/?(?:\?.*|)$",
     re.IGNORECASE,
 )
 SOURCE_INPUT_MATCH_M3U = re.compile(r"^(?!http).*\.m3u8?$", re.IGNORECASE)
@@ -126,9 +123,13 @@ SOURCE_INPUT_MATCH_PLS = re.compile(r"^.*\.pls$", re.IGNORECASE)
 SOURCE_INPUT_MATCH_PLS_TRACK = re.compile(r"^File\d+=(?P<pls_query>.+)$", re.IGNORECASE)
 SOURCE_INPUT_MATCH_XSPF = re.compile(r"^.*\.xspf$", re.IGNORECASE)
 SOURCE_INPUT_MATCH_PYLAV = re.compile(r"^.*\.pylav$", re.IGNORECASE)
-# https://github.com/Walkyst/lavaplayer-fork/blob/custom/main/src/main/java/com/sedmelluq/discord/lavaplayer/source/youtube/DefaultYoutubeLinkRouter.java
+# https://github.com/lavalink-devs/lavaplayer/tree/main/main/src/main/java/com/sedmelluq/discord/lavaplayer/source/youtube/DefaultYoutubeLinkRouter.java
 SOURCE_INPUT_MATCH_YOUTUBE = re.compile(
-    r"(?:http://|https://|)(?:www\.|m\.)?(?P<youtube_music>music\.)?youtu(be\.com|\.be)", re.IGNORECASE
+    r"^(?:http://|https://|)(?:www\.|(?P<youtube_music>m\.|music\.)|)youtube\.com/.*", re.IGNORECASE
+)
+SOURCE_INPUT_MATCH_YOUTUBE_SHORT = re.compile(
+    r"^(?:http://|https://|)(?:(?:www\.|(?P<youtube_music_short>m\.|music\.)|)youtube\.com/(?:live|embed|shorts)|(?:www\.|)youtu\.be)/(?P<YtmvideoId>.*)",
+    re.IGNORECASE,
 )
 SOURCE_INPUT_MATCH_SPEAK = re.compile(r"^(?P<speak_source>speak):\s*?(?P<speak_query>.*)$", re.IGNORECASE)
 # noinspection SpellCheckingInspection
@@ -150,14 +151,12 @@ SOURCE_INPUT_MATCH_DEEZER = re.compile(
     r"^(https?://)?(www\.)?deezer\.page\.link/.*$",
     re.IGNORECASE,
 )
-# https://github.com/Walkyst/lavaplayer-fork/blob/custom/main/src/main/java/com/sedmelluq/discord/lavaplayer/source/yamusic/YandexMusicAudioSourceManager.java#L33
 # https://github.com/topi314/LavaSrc/blob/master/main/src/main/java/com/github/topi314/lavasrc/yandexmusic/YandexMusicSourceManager.java#L34
 SOURCE_INPUT_MATCH_YANDEX_TRACK = re.compile(
-    r"^(https?://)?music\.yandex\.ru/(?P<ymtype1>artist|album)/"
-    r"(?P<ymidentifier>[0-9]+)/?((?P<ymtype2>track/)(?P<ymidentifier2>[0-9]+)/?)?$"
+    r"^(https?://)?music\.yandex\.(?P<ymdomain>ru|com|kz|by)/(?P<ymtype1>artist|album|track)/(?P<ymidentifier>[0-9]+)(/(?P<ymtype2>track)/(?P<ymidentifier2>[0-9]+))?/?$"
 )
 SOURCE_INPUT_MATCH_YANDEX_PLAYLIST = re.compile(
-    r"^(https?://)?music\.yandex\.ru/users/(?P<ympidentifier>[0-9A-Za-z@.-]+)/playlists/(?P<ympidentifier2>\d+)/?$"
+    r"^(https?://)?music\.yandex\.(?P<ympdomain>ru|com|kz|by)/users/(?P<ympidentifier>[0-9A-Za-z@.-]+)/playlists/(?P<ympidentifier2>[0-9]+)/?$"
 )
 SOURCE_INPUT_MATCH_YANDEX = re.compile(
     "|".join([SOURCE_INPUT_MATCH_YANDEX_TRACK.pattern, SOURCE_INPUT_MATCH_YANDEX_PLAYLIST.pattern])
@@ -177,6 +176,8 @@ SOURCE_INPUT_MATCH_MERGED = re.compile(
                 SOURCE_INPUT_MATCH_SPOTIFY,
                 SOURCE_INPUT_MATCH_APPLE_MUSIC,
                 SOURCE_INPUT_MATCH_YOUTUBE,
+                SOURCE_INPUT_MATCH_YOUTUBE_SHORT,
+                SOURCE_INPUT_MATCH_DEEZER,
                 SOURCE_INPUT_MATCH_SPEAK,
                 SOURCE_INPUT_MATCH_GCTSS,
                 SOURCE_INPUT_MATCH_FLOWERY_TSS,
@@ -200,7 +201,6 @@ SOURCE_INPUT_MATCH_MERGED = re.compile(
                 SOURCE_INPUT_MATCH_PYLAV,
                 LOCAL_TRACK_NESTED,
                 SOURCE_INPUT_MATCH_LOCAL_TRACK_URI,
-                SOURCE_INPUT_MATCH_DEEZER,
                 SOURCE_INPUT_MATCH_HTTP,
             ]
         ]

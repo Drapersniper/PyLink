@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pylav\n"
 "POT-Creation-Date: 2024-05-21 18:24+0000\n"
-"PO-Revision-Date: 2024-05-21 18:25\n"
+"PO-Revision-Date: 2024-05-23 10:22\n"
 "Last-Translator: \n"
 "Language-Team: Portuguese, Brazilian\n"
 "MIME-Version: 1.0\n"
@@ -50,11 +50,11 @@ msgstr "Página 1 / 1 Lte1 Página"
 
 #: pylav/extension/red/ui/sources/lyrics.py:46
 msgid "Page 1 / 1 | 0 Pages"
-msgstr ""
+msgstr "Página 1 / 1 | 0 Páginas"
 
 #: pylav/extension/red/ui/sources/lyrics.py:48
 msgid "Page {current_page_variable_do_not_translate} / {total_number_of_pages_variable_do_not_translate} | {total_number_of_entries_variable_do_not_translate} Pages"
-msgstr ""
+msgstr "Página {current_page_variable_do_not_translate} / {total_number_of_pages_variable_do_not_translate} | {total_number_of_entries_variable_do_not_translate} Páginas"
 
 #: pylav/extension/red/ui/sources/nodes.py:106
 #: pylav/extension/red/ui/sources/nodes.py:270
