@@ -8,7 +8,7 @@ lavalink:
     -   dependency: dev.lavalink.youtube:youtube-plugin:1.3.0
     -   dependency: me.rohank05:lavalink-filter-plugin:0.0.4
         repository: https://jitpack.io
-    -   dependency: com.github.esmBot:lava-xm-plugin:v0.2.2
+    -   dependency: com.github.esmBot:lava-xm-plugin:v0.2.3
         repository: https://jitpack.io
     server:
         password: youshallnotpass
