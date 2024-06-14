@@ -1,5 +1,18 @@
 # Changelog
 
+## v1.15.7 (14/06/2024)
+- [Fix: '<' not supported between instances of 'int' and 'NoneType'](https://github.com/PyLav/PyLav/commit/2cf84a1d0c161f90e880efabe05cee0de1abc97d) - @Drapersniper
+- [Auto Merge](https://github.com/PyLav/PyLav/commit/3627088fb74734307bbc3a2f361661845d7086f3) - @Drapersniper
+- [Bump actions/checkout from 4.1.6 to 4.1.7](https://github.com/PyLav/PyLav/commit/8411f78f28ca9120ebc6289d928ce7be5d31df78) - @dependabot[bot]
+- [Update plugin version](https://github.com/PyLav/PyLav/commit/b8103a4e64a5c3762e5255d5e28f3186bcf5ef57) - @Drapersniper
+- [Auto Merge](https://github.com/PyLav/PyLav/commit/0efa1d8fdaa1b4e284baace358010b986af607cb) - @Drapersniper
+- [Bump crowdin/github-action from 1.20.4 to 2.0.0](https://github.com/PyLav/PyLav/commit/436b0888ffba0c5302805f2befdc98457dc597f4) - @dependabot[bot]
+- [Bump requests from 2.31.0 to 2.32.0 (#302)](https://github.com/PyLav/PyLav/commit/e20e493974a3112e72478b59b430e7fee5847fbe) - @dependabot[bot]
+- [Auto Merge](https://github.com/PyLav/PyLav/commit/4c1c16546e6f6d9aca83ebcb76552f2dfd4068b6) - @Drapersniper
+- [New Crowdin translations by GitHub Action](https://github.com/PyLav/PyLav/commit/79c8c0b5905f09a16035471640e76b27e4076bc0) - @crowdin-bot
+
+---
+
 ## v1.15.6 (23/05/2024)
 - [Disable emoji prefix](https://github.com/PyLav/PyLav/commit/f4a4246b0219d929a1b5c3160d89d6b5b9bf6b9d) - @Drapersniper
 - [Update PyLav track regex](https://github.com/PyLav/PyLav/commit/cf19ef6262ec3d4e8d4099dff4d68164a46dff07) - @Drapersniper
@@ -808,10 +821,3 @@
 - [Expose the dispatch manager attribute of pylav](https://github.com/Drapersniper/PyLav/commit/d2aecaafeb483a83f3218175d84f7264f8a73726) - @Drapersniper
 - [Better documentation](https://github.com/Drapersniper/PyLav/commit/b5ee42b0552b7f362e52777e8c0fa30934738331) - @Drapersniper
 - [Ignore DB connection errors on tasks](https://github.com/Drapersniper/PyLav/commit/bcc35de6beea4558e3d631a7c731b288b2c1c682) - @Drapersniper
-
----
-
-## v1.0.3 (01/01/2023)
-- [Add a workflow dispatch to PyLav-Cogs](https://github.com/Drapersniper/PyLav/commit/ad3b246c5d7c50eb821036ae20fbbc3bdfea6c25) - @Drapersniper
-- [fix versioning](https://github.com/Drapersniper/PyLav/commit/9683e6d8702b20e24a42dc517623d8c04c10cdcf) - @Drapersniper
-- [Sourcery](https://github.com/Drapersniper/PyLav/commit/9dc5bb339e1963f12a0c0860d89a98d3a4bc6f6a) - @Drapersniper

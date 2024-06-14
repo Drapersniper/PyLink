@@ -92,7 +92,7 @@ omit-covered-files = false
 
 [tool.poetry]
 name = "Py-Lav"
-version = "1.15.6"
+version = "1.15.7-pre.10+2cf84a1d0"
 description = " A Lavalink WebSocket & API wrapper for discord.py"
 authors = ["Draper <27962761+Drapersniper@users.noreply.github.com>"]
 readme = "README.md"
