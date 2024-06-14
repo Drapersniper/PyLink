@@ -86,5 +86,5 @@ LOCAL_TRACKS_FOLDER = os.getenv("PYLAV__LOCAL_TRACKS_FOLDER")
 DATA_FOLDER = os.getenv("PYLAV__DATA_FOLDER")
 ENABLE_NODE_RESUMING = bool(int(os.getenv("PYLAV__ENABLE_NODE_RESUMING", "1")))
 DEFAULT_PLAYER_VOLUME = (
-    max(int(envar_value), 1) if (envar_value := os.getenv("PYLAV__DEFAULT_PLAYER_VOLUME")) is not None else None
+    max(int(envar_value), 1) if (envar_value := os.getenv("PYLAV__DEFAULT_PLAYER_VOLUME")) is not None else 25
 )
