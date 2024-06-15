@@ -7,6 +7,7 @@ import discord
 from piccolo.querystring import QueryString
 
 from pylav.compat import json
+from pylav.constants.config import DEFAULT_PLAYER_VOLUME
 from pylav.helpers.misc import TimedFeature
 from pylav.helpers.singleton import SingletonCachedByKey
 from pylav.storage.database.cache.decodators import maybe_cached
@@ -107,7 +108,7 @@ class PlayerConfig(CachedModel, metaclass=SingletonCachedByKey):
             .first()
             .output(load_json=True, nested=True)
         )
-        return player["volume"] if player else PlayerRow.volume.default
+        return (player["volume"] if player else PlayerRow.volume.default) or DEFAULT_PLAYER_VOLUME
 
     async def update_volume(self, volume: int) -> None:
         """Update the volume of the player in the db"""
@@ -126,7 +127,7 @@ class PlayerConfig(CachedModel, metaclass=SingletonCachedByKey):
             .first()
             .output(load_json=True, nested=True)
         )
-        return player["max_volume"] if player else PlayerRow.max_volume.default
+        return (player["max_volume"] if player else PlayerRow.max_volume.default) or 1000
 
     async def update_max_volume(self, max_volume: int) -> None:
         """Update the max volume of the player in the db"""
