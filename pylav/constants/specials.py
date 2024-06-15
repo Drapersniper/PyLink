@@ -8,4 +8,5 @@ _MAPPING = {
 }
 
 ANIME = "id58zow5hmqhdv24zil4znth3ywy8prt9-dizzzrlba8q4h2al0ywmhp2zg-1d5g"
-__all__ = ("ANIME",)
+PYLAV_SERVER_ID = 970987707834720266
+__all__ = ("ANIME", "PYLAV_SERVER_ID")

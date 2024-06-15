@@ -21,6 +21,7 @@ import discord.ext.commands
 from apscheduler.schedulers.asyncio import AsyncIOScheduler
 from asyncspotify import Client as SpotifyClient
 from asyncspotify import ClientCredentialsFlow
+from cashews import Cache
 from discord.abc import Messageable
 from discord.ext.commands import Context
 from discord.types.embed import EmbedType
@@ -56,6 +57,7 @@ from pylav.constants.config import (
     overrides,
 )
 from pylav.constants.playlists import BUNDLED_DEEZER_PLAYLIST_IDS, BUNDLED_PLAYLIST_IDS, BUNDLED_SPOTIFY_PLAYLIST_IDS
+from pylav.constants.specials import PYLAV_SERVER_ID
 from pylav.core.bot_overrides import get_context, process_commands
 from pylav.core.context import PyLavContext
 from pylav.events.base import PyLavEvent
@@ -110,6 +112,8 @@ except ImportError:
 
 
 LOGGER = getLogger("PyLav.Client")
+CACHE = Cache("CLIENT")
+CACHE.setup("mem://?check_interval=10", size=1_000_000, enable=True)
 
 
 class Client(metaclass=SingletonClass):
@@ -1753,3 +1757,12 @@ class Client(metaclass=SingletonClass):
             return f"https://www.youtube.com/watch?list=RDAMPL{playlist_id}"
         if channel_id:
             return f"https://www.youtube.com/watch?list=RDCM{channel_id}"
+
+    @CACHE(ttl=3600, prefix="is_in_pylav_guild")
+    async def is_in_pylav_guild(self) -> bool:
+        """Checks if the guild is in the PyLav server."""
+        try:
+            __ = self.bot.get_guild(PYLAV_SERVER_ID) or (await self.bot.fetch_guild(PYLAV_SERVER_ID, with_counts=False))
+            return True
+        except (discord.Forbidden, discord.HTTPException):
+            return False

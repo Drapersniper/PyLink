@@ -785,7 +785,11 @@ class Track:
             return await self.get_track_display_name_unformatted(max_length=max_length, author=author, escape=escape)
         else:
             return await self.get_track_display_name_formatted(
-                max_length=max_length, author=author, with_url=with_url, escape=escape
+                max_length=max_length,
+                author=author,
+                with_url=with_url,
+                escape=escape,
+                with_emoji=await self.client.is_in_pylav_guild(),
             )
 
     async def get_track_display_name_unformatted(
