@@ -1,5 +1,12 @@
 # Changelog
 
+## v1.15.8 (15/06/2024)
+- [Fix volume fallbacks to never return None](https://github.com/PyLav/PyLav/commit/786376218471de399a1b1f3f4adfc2247b85e47d) - @Drapersniper
+- [Auto Merge](https://github.com/PyLav/PyLav/commit/c1dcf1b818488cbb71367cb216af2257f5b59f0a) - @Drapersniper
+- [New Crowdin translations by GitHub Action](https://github.com/PyLav/PyLav/commit/b2f58ad0d411df0c89baa4a78d2fc079e8914c80) - @crowdin-bot
+
+---
+
 ## v1.15.7 (14/06/2024)
 - [Fix: '<' not supported between instances of 'int' and 'NoneType'](https://github.com/PyLav/PyLav/commit/2cf84a1d0c161f90e880efabe05cee0de1abc97d) - @Drapersniper
 - [Auto Merge](https://github.com/PyLav/PyLav/commit/3627088fb74734307bbc3a2f361661845d7086f3) - @Drapersniper
@@ -813,11 +820,3 @@
 - [delete empty queries in cache](https://github.com/Drapersniper/PyLav/commit/9e70abea40b967950b7fb2129502d423697ed8cd) - @Drapersniper
 - [Only return cached entry if there are tracks to be returned](https://github.com/Drapersniper/PyLav/commit/e10369fa5549217c2e8e54f0a616de1b7e93a5b4) - @Drapersniper
 - [Add a note to the the setup.md](https://github.com/Drapersniper/PyLav/commit/e38ba1089c3960ac846b982b125a804fa0ea31ad) - @Drapersniper
-
----
-
-## v1.0.4 (01/01/2023)
-- [Add the youtube email config option](https://github.com/Drapersniper/PyLav/commit/7f98770f7ad81e73a476c82b749755e172a613cd) - @Drapersniper
-- [Expose the dispatch manager attribute of pylav](https://github.com/Drapersniper/PyLav/commit/d2aecaafeb483a83f3218175d84f7264f8a73726) - @Drapersniper
-- [Better documentation](https://github.com/Drapersniper/PyLav/commit/b5ee42b0552b7f362e52777e8c0fa30934738331) - @Drapersniper
-- [Ignore DB connection errors on tasks](https://github.com/Drapersniper/PyLav/commit/bcc35de6beea4558e3d631a7c731b288b2c1c682) - @Drapersniper
