@@ -1,5 +1,10 @@
 # Changelog
 
+## v1.15.9 (15/06/2024)
+- [Allows bots in PyLav server to display emojis](https://github.com/PyLav/PyLav/commit/02ce652eea9825810363d05d8bfcff253ca87ba4) - @Drapersniper
+
+---
+
 ## v1.15.8 (15/06/2024)
 - [Fix volume fallbacks to never return None](https://github.com/PyLav/PyLav/commit/786376218471de399a1b1f3f4adfc2247b85e47d) - @Drapersniper
 - [Auto Merge](https://github.com/PyLav/PyLav/commit/c1dcf1b818488cbb71367cb216af2257f5b59f0a) - @Drapersniper
@@ -814,9 +819,3 @@
 
 
 **Full Changelog**: https://github.com/Drapersniper/PyLav/compare/v1.0.4...v1.0.6
----
-
-## v1.0.5 (02/01/2023)
-- [delete empty queries in cache](https://github.com/Drapersniper/PyLav/commit/9e70abea40b967950b7fb2129502d423697ed8cd) - @Drapersniper
-- [Only return cached entry if there are tracks to be returned](https://github.com/Drapersniper/PyLav/commit/e10369fa5549217c2e8e54f0a616de1b7e93a5b4) - @Drapersniper
-- [Add a note to the the setup.md](https://github.com/Drapersniper/PyLav/commit/e38ba1089c3960ac846b982b125a804fa0ea31ad) - @Drapersniper
