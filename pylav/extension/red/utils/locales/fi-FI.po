@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: pylav\n"
-"POT-Creation-Date: 2023-05-17 19:31+0000\n"
-"PO-Revision-Date: 2024-05-23 10:22\n"
+"POT-Creation-Date: 2024-06-18 22:00+0000\n"
+"PO-Revision-Date: 2024-06-18 22:01\n"
 "Last-Translator: \n"
 "Language-Team: Finnish\n"
 "MIME-Version: 1.0\n"
@@ -68,7 +68,7 @@ msgstr "Tämä komento edellyttää, että olen äänikanavalla ennen kuin se vo
 msgid "PyLavPlayer cog is temporarily unavailable due to an outage with the backend services; please try again later."
 msgstr "PyLavPlayer-hammasratas on tilapäisesti poissa käytöstä taustapalveluiden katkoksen vuoksi; yritä myöhemmin uudelleen."
 
-#: pylav/extension/red/utils/required_methods.py:141
+#: pylav/extension/red/utils/required_methods.py:142
 msgid "There are no nodes available currently."
 msgstr "Tällä hetkellä ei ole solmuja."
 
@@ -76,19 +76,19 @@ msgstr "Tällä hetkellä ei ole solmuja."
 msgid "PyLavPlayer is currently unable to process tracks belonging to {feature_name_variable_do_not_translate}."
 msgstr "PyLavPlayer ei tällä hetkellä pysty käsittelemään kappaleita, jotka kuuluvat {feature_name_variable_do_not_translate}."
 
-#: pylav/extension/red/utils/required_methods.py:155
+#: pylav/extension/red/utils/required_methods.py:156
 msgid "There is currently no available Lavalink node with the feature {feature_name_variable_do_not_translate}."
 msgstr "Tällä hetkellä ei ole käytettävissä Lavalink-solmua, jossa on ominaisuus {feature_name_variable_do_not_translate}."
 
-#: pylav/extension/red/utils/required_methods.py:168
+#: pylav/extension/red/utils/required_methods.py:170
 msgid "This command is unavailable in this channel; please use {channel_name_variable_do_not_translate} instead."
 msgstr "Tämä komento ei ole käytettävissä tällä kanavalla; ole hyvä ja käytä {channel_name_variable_do_not_translate} sen sijaan."
 
-#: pylav/extension/red/utils/required_methods.py:184
+#: pylav/extension/red/utils/required_methods.py:188
 msgid "This command requires you to be a disc jockey."
 msgstr "Tämä komento edellyttää, että olet levyjockey."
 
-#: pylav/extension/red/utils/required_methods.py:222
+#: pylav/extension/red/utils/required_methods.py:226
 msgid "PyLav is starting up; please try again in a few minutes."
 msgstr "PyLav on käynnistymässä; yritä uudelleen muutaman minuutin kuluttua."
 
