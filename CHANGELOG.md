@@ -1,5 +1,13 @@
 # Changelog
 
+## v1.15.11 (18/06/2024)
+- [Hotfix for v1.15.10, ensuring youtube urls are actually functional](https://github.com/PyLav/PyLav/commit/31c78caced7c334456e6563882ce9a936d423609) - @Drapersniper
+- [Auto Merge](https://github.com/PyLav/PyLav/commit/3c53b6618107a238f0fd0a2f40f49d56a27cbe49) - @Drapersniper
+- [New Crowdin translations by GitHub Action](https://github.com/PyLav/PyLav/commit/cba495b832abd86806c82eba8a9c5a12f587e8ba) - @crowdin-bot
+- [Update dependencies and formatting](https://github.com/PyLav/PyLav/commit/fe9a8857914703f871c18b2f323c616e5dc1fa8e) - @Drapersniper
+
+---
+
 ## v1.15.10 (18/06/2024)
 - [Fix URL Matching for youtube URLs](https://github.com/PyLav/PyLav/commit/acea10152f2a4e267e423f52aea9c64bba082752) - @Drapersniper
 - [Auto Merge](https://github.com/PyLav/PyLav/commit/9058d20200666279b8a3e8b96468e57b11b44ad8) - @Drapersniper
@@ -812,8 +820,3 @@
 - [Remove `lava.link` bundled node permanently](https://github.com/Drapersniper/PyLav/commit/d7f201297e56f91faff0842541c8e92265bba56a) - @Drapersniper
 - [make the redbot container depend on the postgres and ll-node containers](https://github.com/Drapersniper/PyLav/commit/d6ac80a1c309e0619431b01b54f43d8268bc478f) - @Drapersniper
 - [Dependency update and cleanup](https://github.com/Drapersniper/PyLav/commit/7a51c40100e734aa151ea72e5751a39317fb47b6) - @Drapersniper
-
----
-
-## v1.0.7 (02/01/2023)
-
