@@ -1,5 +1,12 @@
 # Changelog
 
+## v1.15.10 (18/06/2024)
+- [Fix URL Matching for youtube URLs](https://github.com/PyLav/PyLav/commit/acea10152f2a4e267e423f52aea9c64bba082752) - @Drapersniper
+- [Auto Merge](https://github.com/PyLav/PyLav/commit/9058d20200666279b8a3e8b96468e57b11b44ad8) - @Drapersniper
+- [New Crowdin translations by GitHub Action](https://github.com/PyLav/PyLav/commit/be134621125a5627e669a22ec6fb157b4c44c205) - @crowdin-bot
+
+---
+
 ## v1.15.9 (15/06/2024)
 - [Allows bots in PyLav server to display emojis](https://github.com/PyLav/PyLav/commit/02ce652eea9825810363d05d8bfcff253ca87ba4) - @Drapersniper
 
@@ -810,12 +817,3 @@
 
 ## v1.0.7 (02/01/2023)
 
-
----
-
-## v1.0.6 (02/01/2023)
-## What's Changed
-* New Crowdin translations by Github Action by @Drapersniper in https://github.com/Drapersniper/PyLav/pull/132
-
-
-**Full Changelog**: https://github.com/Drapersniper/PyLav/compare/v1.0.4...v1.0.6
