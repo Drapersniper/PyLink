@@ -108,9 +108,11 @@ class QueueSource(menus.ListPageSource):
             if player.current and (player.history.size() if self.history else True)
             else {
                 "embed": await self.cog.pylav.construct_embed(
-                    description=_("I am not currently playing anything on this server.")
-                    if self.history
-                    else _("I am not currently playing anything on this server."),
+                    description=(
+                        _("I am not currently playing anything on this server.")
+                        if self.history
+                        else _("I am not currently playing anything on this server.")
+                    ),
                     messageable=menu.ctx,
                 )
             }

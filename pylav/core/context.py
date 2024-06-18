@@ -218,9 +218,9 @@ class PyLavContext(OriginalContextClass):
                 "tts": False,
                 "pinned": False,
                 "edited_timestamp": None,
-                "type": MessageType.chat_input_command
-                if data.get("type", 1) == 1
-                else MessageType.context_menu_command,
+                "type": (
+                    MessageType.chat_input_command if data.get("type", 1) == 1 else MessageType.context_menu_command
+                ),
                 "flags": 64,
                 "content": "",
                 "mentions": [],

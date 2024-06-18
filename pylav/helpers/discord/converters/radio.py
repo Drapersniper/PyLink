@@ -97,9 +97,11 @@ else:
             """Adds a station to the cache if it's not already in it"""
             if station.stationuuid not in cls._choice_cache_stations:
                 cls._choice_cache_stations[station.stationuuid] = Choice(
-                    name=shorten_string(station.name, max_length=100)
-                    if station.name
-                    else shorten_string(max_length=100, string=_("Unnamed")),
+                    name=(
+                        shorten_string(station.name, max_length=100)
+                        if station.name
+                        else shorten_string(max_length=100, string=_("Unnamed"))
+                    ),
                     value=f"{station.stationuuid}",
                 )
                 cls._cache_stations[station.stationuuid] = station

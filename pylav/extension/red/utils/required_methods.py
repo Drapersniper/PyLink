@@ -138,9 +138,9 @@ async def cog_command_error(self: DISCORD_COG_TYPE, context: PyLavContext, error
                 description=_(
                     "PyLavPlayer cog is temporarily unavailable due to an outage with the backend services; please try again later."
                 ),
-                footer=_("There are no nodes available currently.")
-                if await self.bot.is_owner(context.author)
-                else None,
+                footer=(
+                    _("There are no nodes available currently.") if await self.bot.is_owner(context.author) else None
+                ),
             ),
             ephemeral=True,
         )
@@ -152,11 +152,13 @@ async def cog_command_error(self: DISCORD_COG_TYPE, context: PyLavContext, error
                 description=_(
                     "PyLavPlayer is currently unable to process tracks belonging to {feature_name_variable_do_not_translate}."
                 ).format(feature_name_variable_do_not_translate=error.feature),
-                footer=_(
-                    "There is currently no available Lavalink node with the feature {feature_name_variable_do_not_translate}."
-                ).format(feature_name_variable_do_not_translate=error.feature)
-                if await self.bot.is_owner(context.author)
-                else None,
+                footer=(
+                    _(
+                        "There is currently no available Lavalink node with the feature {feature_name_variable_do_not_translate}."
+                    ).format(feature_name_variable_do_not_translate=error.feature)
+                    if await self.bot.is_owner(context.author)
+                    else None
+                ),
             ),
             ephemeral=True,
         )
@@ -168,9 +170,11 @@ async def cog_command_error(self: DISCORD_COG_TYPE, context: PyLavContext, error
                 description=_(
                     "This command is unavailable in this channel; please use {channel_name_variable_do_not_translate} instead."
                 ).format(
-                    channel_name_variable_do_not_translate=channel.mention
-                    if (channel := context.guild.get_channel_or_thread(error.channel))
-                    else error.channel
+                    channel_name_variable_do_not_translate=(
+                        channel.mention
+                        if (channel := context.guild.get_channel_or_thread(error.channel))
+                        else error.channel
+                    )
                 ),
             ),
             ephemeral=True,

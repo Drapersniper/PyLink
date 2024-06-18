@@ -166,6 +166,6 @@ class Distortion(FilterMixin):
         return response
 
     def reset(self) -> None:
-        self.sin_scale = (
-            self.cos_offset
-        ) = self.cos_scale = self.tan_offset = self.tan_scale = self.offset = self.scale = self.sin_offset = None
+        self.sin_scale = self.cos_offset = self.cos_scale = self.tan_offset = self.tan_scale = self.offset = (
+            self.scale
+        ) = self.sin_offset = None
