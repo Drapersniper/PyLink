@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: pylav\n"
-"POT-Creation-Date: 2023-05-17 19:31+0000\n"
-"PO-Revision-Date: 2024-05-23 10:22\n"
+"POT-Creation-Date: 2024-06-18 22:00+0000\n"
+"PO-Revision-Date: 2024-06-18 22:01\n"
 "Last-Translator: \n"
 "Language-Team: Lithuanian\n"
 "MIME-Version: 1.0\n"
@@ -38,40 +38,40 @@ msgid "A station with the name `{user_input_variable_do_not_translate}` was not 
 msgstr "Stotis su pavadinimu \"{user_input_variable_do_not_translate}\" nerasta."
 
 #: pylav/helpers/discord/converters/radio.py:80
-#: pylav/helpers/discord/converters/radio.py:174
-#: pylav/helpers/discord/converters/radio.py:224
-#: pylav/helpers/discord/converters/radio.py:272
-#: pylav/helpers/discord/converters/radio.py:319
-#: pylav/helpers/discord/converters/radio.py:366
-#: pylav/helpers/discord/converters/radio.py:413
+#: pylav/helpers/discord/converters/radio.py:176
+#: pylav/helpers/discord/converters/radio.py:226
+#: pylav/helpers/discord/converters/radio.py:274
+#: pylav/helpers/discord/converters/radio.py:321
+#: pylav/helpers/discord/converters/radio.py:368
+#: pylav/helpers/discord/converters/radio.py:415
 msgid "The Radio Browser extension is currently disabled."
 msgstr "Radijo naršyklės plėtinys šiuo metu išjungtas."
 
-#: pylav/helpers/discord/converters/radio.py:102
+#: pylav/helpers/discord/converters/radio.py:103
 msgid "Unnamed"
 msgstr "Bevardis"
 
-#: pylav/helpers/discord/converters/radio.py:152
+#: pylav/helpers/discord/converters/radio.py:154
 msgid "A tag with the name `{user_input_variable_do_not_translate}` was not found."
 msgstr "Žyma su pavadinimu \"{user_input_variable_do_not_translate}\" nerasta."
 
-#: pylav/helpers/discord/converters/radio.py:202
+#: pylav/helpers/discord/converters/radio.py:204
 msgid "A language with the name `{user_input_variable_do_not_translate}` was not found."
 msgstr "Kalba su pavadinimu \"{user_input_variable_do_not_translate}\" nerasta."
 
-#: pylav/helpers/discord/converters/radio.py:250
+#: pylav/helpers/discord/converters/radio.py:252
 msgid "A state with the name `{user_input_variable_do_not_translate}` was not found."
 msgstr "Valstybė su pavadinimu \"{user_input_variable_do_not_translate}\" nerasta."
 
-#: pylav/helpers/discord/converters/radio.py:297
+#: pylav/helpers/discord/converters/radio.py:299
 msgid "A codec with the name `{user_input_variable_do_not_translate}` was not found."
 msgstr "Kodekas su pavadinimu \"{user_input_variable_do_not_translate}\" nerasta."
 
-#: pylav/helpers/discord/converters/radio.py:344
+#: pylav/helpers/discord/converters/radio.py:346
 msgid "A country code with the value `{user_input_variable_do_not_translate}` was not found."
 msgstr "Šalies kodas, kurio vertė '{user_input_variable_do_not_translate}\" nerasta."
 
-#: pylav/helpers/discord/converters/radio.py:391
+#: pylav/helpers/discord/converters/radio.py:393
 msgid "A country with the name `{user_input_variable_do_not_translate}` was not found."
 msgstr "Šalis su pavadinimu \"{user_input_variable_do_not_translate}\" nerasta."
 

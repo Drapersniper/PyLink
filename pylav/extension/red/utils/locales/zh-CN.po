@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: pylav\n"
-"POT-Creation-Date: 2023-05-17 19:31+0000\n"
-"PO-Revision-Date: 2024-05-23 10:22\n"
+"POT-Creation-Date: 2024-06-18 22:00+0000\n"
+"PO-Revision-Date: 2024-06-18 22:01\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "MIME-Version: 1.0\n"
@@ -69,7 +69,7 @@ msgstr "此命令要求我先处于语音通道中，然后才能执行。"
 msgid "PyLavPlayer cog is temporarily unavailable due to an outage with the backend services; please try again later."
 msgstr "由于后端服务中断，PyLavPlayer 齿轮暂时不可用;请稍后重试。"
 
-#: pylav/extension/red/utils/required_methods.py:141
+#: pylav/extension/red/utils/required_methods.py:142
 msgid "There are no nodes available currently."
 msgstr "当前没有可用的节点。"
 
@@ -77,19 +77,19 @@ msgstr "当前没有可用的节点。"
 msgid "PyLavPlayer is currently unable to process tracks belonging to {feature_name_variable_do_not_translate}."
 msgstr "PyLavPlayer 目前无法处理属于 {feature_name_variable_do_not_translate}."
 
-#: pylav/extension/red/utils/required_methods.py:155
+#: pylav/extension/red/utils/required_methods.py:156
 msgid "There is currently no available Lavalink node with the feature {feature_name_variable_do_not_translate}."
 msgstr "目前没有可用的 Lavalink 节点具有该功能 {feature_name_variable_do_not_translate}."
 
-#: pylav/extension/red/utils/required_methods.py:168
+#: pylav/extension/red/utils/required_methods.py:170
 msgid "This command is unavailable in this channel; please use {channel_name_variable_do_not_translate} instead."
 msgstr "此命令在此通道中不可用;请使用 {channel_name_variable_do_not_translate} 相反。"
 
-#: pylav/extension/red/utils/required_methods.py:184
+#: pylav/extension/red/utils/required_methods.py:188
 msgid "This command requires you to be a disc jockey."
 msgstr "此命令要求您是唱片骑师。"
 
-#: pylav/extension/red/utils/required_methods.py:222
+#: pylav/extension/red/utils/required_methods.py:226
 msgid "PyLav is starting up; please try again in a few minutes."
 msgstr "PyLav 正在启动;请在几分钟后重试。"
 

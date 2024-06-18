@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: pylav\n"
-"POT-Creation-Date: 2023-05-17 19:31+0000\n"
-"PO-Revision-Date: 2024-05-23 10:22\n"
+"POT-Creation-Date: 2024-06-18 22:00+0000\n"
+"PO-Revision-Date: 2024-06-18 22:01\n"
 "Last-Translator: \n"
 "Language-Team: Thai\n"
 "MIME-Version: 1.0\n"
@@ -69,7 +69,7 @@ msgstr "คําสั่งนี้ต้องการให้ฉันอ
 msgid "PyLavPlayer cog is temporarily unavailable due to an outage with the backend services; please try again later."
 msgstr "ฟันเฟือง PyLavPlayer ไม่สามารถใช้งานได้ชั่วคราวเนื่องจากบริการแบ็กเอนด์ขัดข้อง โปรดลองอีกครั้งในภายหลัง"
 
-#: pylav/extension/red/utils/required_methods.py:141
+#: pylav/extension/red/utils/required_methods.py:142
 msgid "There are no nodes available currently."
 msgstr "ไม่มีโหนดที่พร้อมใช้งานในขณะนี้"
 
@@ -77,19 +77,19 @@ msgstr "ไม่มีโหนดที่พร้อมใช้งานใ
 msgid "PyLavPlayer is currently unable to process tracks belonging to {feature_name_variable_do_not_translate}."
 msgstr "ขณะนี้ PyLavPlayer ไม่สามารถประมวลผลแทร็กที่เป็นของ {feature_name_variable_do_not_translate}."
 
-#: pylav/extension/red/utils/required_methods.py:155
+#: pylav/extension/red/utils/required_methods.py:156
 msgid "There is currently no available Lavalink node with the feature {feature_name_variable_do_not_translate}."
 msgstr "ขณะนี้ยังไม่มีโหนด Lavalink ที่พร้อมใช้งานพร้อมคุณสมบัตินี้ {feature_name_variable_do_not_translate}."
 
-#: pylav/extension/red/utils/required_methods.py:168
+#: pylav/extension/red/utils/required_methods.py:170
 msgid "This command is unavailable in this channel; please use {channel_name_variable_do_not_translate} instead."
 msgstr "คําสั่งนี้ไม่พร้อมใช้งานในแชนเนลนี้ กรุณาใช้ {channel_name_variable_do_not_translate} แทน"
 
-#: pylav/extension/red/utils/required_methods.py:184
+#: pylav/extension/red/utils/required_methods.py:188
 msgid "This command requires you to be a disc jockey."
 msgstr "คําสั่งนี้กําหนดให้คุณต้องเป็นดิสก์จ๊อกกี้"
 
-#: pylav/extension/red/utils/required_methods.py:222
+#: pylav/extension/red/utils/required_methods.py:226
 msgid "PyLav is starting up; please try again in a few minutes."
 msgstr "PyLav กําลังเริ่มต้นขึ้น โปรดลองอีกครั้งในอีก 2-3 นาที"
 

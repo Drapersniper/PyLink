@@ -688,9 +688,11 @@ class Player(VoiceProtocol):
 
         if self.paused:
             return min(
-                self.timescale.adjust_position(self._paused_position)
-                if self.timescale.changed
-                else self._paused_position,
+                (
+                    self.timescale.adjust_position(self._paused_position)
+                    if self.timescale.changed
+                    else self._paused_position
+                ),
                 await self.current.duration(),
             )
 
@@ -709,9 +711,11 @@ class Player(VoiceProtocol):
 
         if self.paused:
             return min(
-                self.timescale.adjust_position(self._paused_position)
-                if self.timescale.changed
-                else self._paused_position,
+                (
+                    self.timescale.adjust_position(self._paused_position)
+                    if self.timescale.changed
+                    else self._paused_position
+                ),
                 self.current._duration,
             )
 
@@ -2474,9 +2478,7 @@ class Player(VoiceProtocol):
         dur = (
             None
             if current is None
-            else _("LIVE")
-            if await current.stream()
-            else format_time_dd_hh_mm_ss(await current.duration())
+            else _("LIVE") if await current.stream() else format_time_dd_hh_mm_ss(await current.duration())
         )
         if self.timescale.changed:
             dur += "*"
@@ -2541,10 +2543,13 @@ class Player(VoiceProtocol):
         if previous_track_description:
             val = f"{previous_track_description}\n"
             val += "{translation}: `{duration}`\n".format(
-                duration=shorten_string(max_length=100, string=_("LIVE"))
-                if await self.last_track.stream()
-                else (
-                    format_time_dd_hh_mm_ss(await self.last_track.duration()) + ("*" if self.timescale.changed else "")
+                duration=(
+                    shorten_string(max_length=100, string=_("LIVE"))
+                    if await self.last_track.stream()
+                    else (
+                        format_time_dd_hh_mm_ss(await self.last_track.duration())
+                        + ("*" if self.timescale.changed else "")
+                    )
                 ),
                 translation=discord.utils.escape_markdown(_("Duration")),
             )
@@ -2558,10 +2563,12 @@ class Player(VoiceProtocol):
         if next_track_description:
             val = f"{next_track_description}\n"
             val += "{translation}: `{duration}`\n".format(
-                duration=_("LIVE")
-                if await self.next_track.stream()
-                else format_time_dd_hh_mm_ss(await self.next_track.duration())
-                + ("*" if self.timescale.changed else ""),
+                duration=(
+                    _("LIVE")
+                    if await self.next_track.stream()
+                    else format_time_dd_hh_mm_ss(await self.next_track.duration())
+                    + ("*" if self.timescale.changed else "")
+                ),
                 translation=discord.utils.escape_markdown(_("Duration")),
             )
             if rq := self.next_track.requester:
@@ -2664,9 +2671,7 @@ class Player(VoiceProtocol):
         dur = (
             None
             if current is None
-            else _("LIVE")
-            if await current.stream()
-            else format_time_dd_hh_mm_ss(await current.duration())
+            else _("LIVE") if await current.stream() else format_time_dd_hh_mm_ss(await current.duration())
         )
         if self.timescale.changed:
             pos += "*"

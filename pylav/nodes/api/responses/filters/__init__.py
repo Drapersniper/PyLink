@@ -117,17 +117,19 @@ class Filters:
     @staticmethod
     def _process_filter_object(
         name: str,
-        filter_name: Karaoke
-        | Timescale
-        | Tremolo
-        | Vibrato
-        | Rotation
-        | Distortion
-        | ChannelMix
-        | LowPass
-        | Echo
-        | Reverb
-        | None,
+        filter_name: (
+            Karaoke
+            | Timescale
+            | Tremolo
+            | Vibrato
+            | Rotation
+            | Distortion
+            | ChannelMix
+            | LowPass
+            | Echo
+            | Reverb
+            | None
+        ),
         cls: type[
             Karaoke | Timescale | Tremolo | Vibrato | Rotation | Distortion | ChannelMix | LowPass | Echo | Reverb
         ],

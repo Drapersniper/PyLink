@@ -13,5 +13,4 @@ MaybeAwaitable = Union[ANY_GENERIC_TYPE, Awaitable[ANY_GENERIC_TYPE]]
 
 
 class SupportsStr(Protocol):
-    def __str__(self) -> str:
-        ...
+    def __str__(self) -> str: ...

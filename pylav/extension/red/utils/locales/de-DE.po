@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: pylav\n"
-"POT-Creation-Date: 2023-05-17 19:31+0000\n"
-"PO-Revision-Date: 2024-05-21 18:25\n"
+"POT-Creation-Date: 2024-06-18 22:00+0000\n"
+"PO-Revision-Date: 2024-06-18 22:01\n"
 "Last-Translator: \n"
 "Language-Team: German\n"
 "MIME-Version: 1.0\n"
@@ -69,7 +69,7 @@ msgstr "Dieser Befehl erfordert, dass ich mich in einem Sprachkanal befinde, bev
 msgid "PyLavPlayer cog is temporarily unavailable due to an outage with the backend services; please try again later."
 msgstr "PyLavPlayer-Zahnrad ist aufgrund eines Ausfalls der Backend-Dienste vorübergehend nicht verfügbar. Bitte versuchen Sie es später erneut."
 
-#: pylav/extension/red/utils/required_methods.py:141
+#: pylav/extension/red/utils/required_methods.py:142
 msgid "There are no nodes available currently."
 msgstr "Derzeit sind keine Knoten verfügbar."
 
@@ -77,19 +77,19 @@ msgstr "Derzeit sind keine Knoten verfügbar."
 msgid "PyLavPlayer is currently unable to process tracks belonging to {feature_name_variable_do_not_translate}."
 msgstr "PyLavPlayer kann derzeit keine Tracks verarbeiten, die zu {feature_name_variable_do_not_translate}."
 
-#: pylav/extension/red/utils/required_methods.py:155
+#: pylav/extension/red/utils/required_methods.py:156
 msgid "There is currently no available Lavalink node with the feature {feature_name_variable_do_not_translate}."
 msgstr "Es gibt derzeit keinen verfügbaren Lavalink-Knoten mit der Funktion {feature_name_variable_do_not_translate}."
 
-#: pylav/extension/red/utils/required_methods.py:168
+#: pylav/extension/red/utils/required_methods.py:170
 msgid "This command is unavailable in this channel; please use {channel_name_variable_do_not_translate} instead."
 msgstr "Dieser Befehl ist in diesem Kanal nicht verfügbar. Bitte verwenden Sie {channel_name_variable_do_not_translate} stattdessen."
 
-#: pylav/extension/red/utils/required_methods.py:184
+#: pylav/extension/red/utils/required_methods.py:188
 msgid "This command requires you to be a disc jockey."
 msgstr "Für diesen Befehl müssen Sie ein Discjockey sein."
 
-#: pylav/extension/red/utils/required_methods.py:222
+#: pylav/extension/red/utils/required_methods.py:226
 msgid "PyLav is starting up; please try again in a few minutes."
 msgstr "PyLav wird gestartet; Bitte versuchen Sie es in wenigen Minuten erneut."
 

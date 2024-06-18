@@ -329,7 +329,8 @@ class Query:
         if (match := SOURCE_INPUT_MATCH_YOUTUBE.match(query)) or (
             match := SOURCE_INPUT_MATCH_YOUTUBE_SHORT.match(query)
         ):
-            music = match.group("youtube_music") or match.group("youtube_music_short")
+            groups = match.groupdict()
+            music = groups.get("youtube_music") or groups.get("youtube_music_short")
             return process_youtube(cls, query, music=bool(music))
         elif SOURCE_INPUT_MATCH_SPOTIFY.match(query):
             return process_spotify(cls, query)

@@ -1633,13 +1633,11 @@ class Client(metaclass=SingletonClass):
                 else:
                     LOGGER.error("Unknown query type: %s", subquery)
         data = {
-            "loadType": "playlist"
-            if playlist_name and playlist_count == 1
-            else "search"
-            if len(output_tracks) > 1
-            else "track"
-            if output_tracks
-            else "empty",
+            "loadType": (
+                "playlist"
+                if playlist_name and playlist_count == 1
+                else "search" if len(output_tracks) > 1 else "track" if output_tracks else "empty"
+            ),
             "data": None,
         }
         match data["loadType"]:

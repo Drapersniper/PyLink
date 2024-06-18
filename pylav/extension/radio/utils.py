@@ -177,27 +177,33 @@ class TransformerCache:
         """Fill the choice cache with data from the cache."""
         cls._choice_cache_stations = {
             station.stationuuid: Choice(
-                name=shorten_string(station.name, max_length=100)
-                if station.name
-                else shorten_string(max_length=100, string=_("Unnamed")),
+                name=(
+                    shorten_string(station.name, max_length=100)
+                    if station.name
+                    else shorten_string(max_length=100, string=_("Unnamed"))
+                ),
                 value=f"{station.stationuuid}",
             )
             for station in cls._cache_stations.values()
         }
         cls._choice_cache_tags = {
             tag.name: Choice(
-                name=shorten_string(tag.name, max_length=100)
-                if tag.name
-                else shorten_string(max_length=100, string=_("Unnamed")),
+                name=(
+                    shorten_string(tag.name, max_length=100)
+                    if tag.name
+                    else shorten_string(max_length=100, string=_("Unnamed"))
+                ),
                 value=f"{tag.name}",
             )
             for tag in cls._cache_tags.values()
         }
         cls._choice_cache_languages = {
             language.name: Choice(
-                name=shorten_string(language.name, max_length=100)
-                if language.name
-                else shorten_string(max_length=100, string=_("Unnamed")),
+                name=(
+                    shorten_string(language.name, max_length=100)
+                    if language.name
+                    else shorten_string(max_length=100, string=_("Unnamed"))
+                ),
                 value=f"{language.name}",
             )
             for language in cls._cache_languages.values()
@@ -525,9 +531,11 @@ class TransformerCache:
         extracted: list[Station] = heapq.nlargest(25, cls.get_station_cache().values(), key=_filter)
         cls._top_25_stations = [
             Choice(
-                name=shorten_string(e.name, max_length=100)
-                if e.name
-                else shorten_string(max_length=100, string=_("Unnamed")),
+                name=(
+                    shorten_string(e.name, max_length=100)
+                    if e.name
+                    else shorten_string(max_length=100, string=_("Unnamed"))
+                ),
                 value=f"{e.stationuuid}",
             )
             for e in extracted

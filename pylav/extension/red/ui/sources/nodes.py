@@ -172,11 +172,11 @@ class NodeListSource(menus.ListPageSource):
                 f"-\n{pylav_connected_players}/{server_connected_players or '?'}\n"
                 f"{pylav_active_players}/{server_active_players or '?'}"
             ),
-            EightBitANSI.paint_white(_("Frames Lost")): EightBitANSI.paint_blue(
-                f"{(abs(frames_deficit) + abs(frames_nulled))/(frames_sent or 1) * 100:.2f}%"
-            )
-            if ((abs(frames_deficit) + abs(frames_nulled)) / (frames_sent or 1)) > 0
-            else EightBitANSI.paint_blue("0%"),
+            EightBitANSI.paint_white(_("Frames Lost")): (
+                EightBitANSI.paint_blue(f"{(abs(frames_deficit) + abs(frames_nulled))/(frames_sent or 1) * 100:.2f}%")
+                if ((abs(frames_deficit) + abs(frames_nulled)) / (frames_sent or 1)) > 0
+                else EightBitANSI.paint_blue("0%")
+            ),
             EightBitANSI.paint_white(_("Uptime")): EightBitANSI.paint_blue(uptime),
             EightBitANSI.paint_white(_("CPU Load\nLavalink\nSystem")): EightBitANSI.paint_blue(
                 f"-\n{lavalink_load}%\n{system_load}%"
@@ -336,11 +336,11 @@ class NodeManageSource(menus.ListPageSource):
                 f"-\n{pylav_connected_players}/{server_connected_players or '?'}\n"
                 f"{pylav_active_players}/{server_active_players or '?'}"
             ),
-            EightBitANSI.paint_white(_("Frames Lost")): EightBitANSI.paint_blue(
-                f"{(abs(frames_deficit) + abs(frames_nulled)) / (frames_sent or 1) * 100:.2f}%"
-            )
-            if ((abs(frames_deficit) + abs(frames_nulled)) / (frames_sent or 1)) > 0
-            else EightBitANSI.paint_blue("0%"),
+            EightBitANSI.paint_white(_("Frames Lost")): (
+                EightBitANSI.paint_blue(f"{(abs(frames_deficit) + abs(frames_nulled)) / (frames_sent or 1) * 100:.2f}%")
+                if ((abs(frames_deficit) + abs(frames_nulled)) / (frames_sent or 1)) > 0
+                else EightBitANSI.paint_blue("0%")
+            ),
             EightBitANSI.paint_white(_("Uptime")): EightBitANSI.paint_blue(uptime),
             EightBitANSI.paint_white(_("CPU Load\nLavalink\nSystem")): EightBitANSI.paint_blue(
                 f"-\n{lavalink_load}%\n{system_load}%"

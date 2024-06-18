@@ -26,13 +26,15 @@ def in_container() -> bool:
         checks = [
             "docker" in out,
             "/lxc/" in out,
-            out.split(" ")[0]
-            not in (
-                "systemd",
-                "init",
-            )
-            if out
-            else False,
+            (
+                out.split(" ")[0]
+                not in (
+                    "systemd",
+                    "init",
+                )
+                if out
+                else False
+            ),
             os.path.exists("./dockerenv"),
             os.path.exists("/.dockerinit"),
             os.getenv("container") is not None,

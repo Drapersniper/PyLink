@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: pylav\n"
-"POT-Creation-Date: 2023-05-17 19:31+0000\n"
-"PO-Revision-Date: 2024-05-23 10:22\n"
+"POT-Creation-Date: 2024-06-18 22:00+0000\n"
+"PO-Revision-Date: 2024-06-18 22:01\n"
 "Last-Translator: \n"
 "Language-Team: Finnish\n"
 "MIME-Version: 1.0\n"
@@ -17,10 +17,10 @@ msgstr ""
 "X-Crowdin-File-ID: 3753\n"
 "Language: fi_FI\n"
 
-#: pylav/extension/radio/utils.py:182 pylav/extension/radio/utils.py:191
-#: pylav/extension/radio/utils.py:200 pylav/extension/radio/utils.py:207
-#: pylav/extension/radio/utils.py:213 pylav/extension/radio/utils.py:219
-#: pylav/extension/radio/utils.py:226 pylav/extension/radio/utils.py:530
+#: pylav/extension/radio/utils.py:183 pylav/extension/radio/utils.py:194
+#: pylav/extension/radio/utils.py:205 pylav/extension/radio/utils.py:213
+#: pylav/extension/radio/utils.py:219 pylav/extension/radio/utils.py:225
+#: pylav/extension/radio/utils.py:232 pylav/extension/radio/utils.py:537
 msgid "Unnamed"
 msgstr "Nimetön"
 

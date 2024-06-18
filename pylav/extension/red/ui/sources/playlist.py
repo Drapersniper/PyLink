@@ -197,10 +197,12 @@ class PlaylistListSource(menus.ListPageSource):
                         num_variable_do_not_translate=await playlist.size()
                     ),
                     _("Author: {name_variable_do_not_translate}").format(name_variable_do_not_translate=author_name),
-                    "\n"
-                    if is_same
-                    else _("Scope: {scope_variable_do_not_translate}\n").format(
-                        scope_variable_do_not_translate=scope_name
+                    (
+                        "\n"
+                        if is_same
+                        else _("Scope: {scope_variable_do_not_translate}\n").format(
+                            scope_variable_do_not_translate=scope_name
+                        )
                     ),
                 )
             )

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: pylav\n"
-"POT-Creation-Date: 2023-05-17 19:31+0000\n"
-"PO-Revision-Date: 2024-05-21 18:25\n"
+"POT-Creation-Date: 2024-06-18 22:00+0000\n"
+"PO-Revision-Date: 2024-06-18 22:01\n"
 "Last-Translator: \n"
 "Language-Team: Polish\n"
 "MIME-Version: 1.0\n"
@@ -38,40 +38,40 @@ msgid "A station with the name `{user_input_variable_do_not_translate}` was not 
 msgstr "Stacja o nazwie \"{user_input_variable_do_not_translate}' nie znaleziono."
 
 #: pylav/helpers/discord/converters/radio.py:80
-#: pylav/helpers/discord/converters/radio.py:174
-#: pylav/helpers/discord/converters/radio.py:224
-#: pylav/helpers/discord/converters/radio.py:272
-#: pylav/helpers/discord/converters/radio.py:319
-#: pylav/helpers/discord/converters/radio.py:366
-#: pylav/helpers/discord/converters/radio.py:413
+#: pylav/helpers/discord/converters/radio.py:176
+#: pylav/helpers/discord/converters/radio.py:226
+#: pylav/helpers/discord/converters/radio.py:274
+#: pylav/helpers/discord/converters/radio.py:321
+#: pylav/helpers/discord/converters/radio.py:368
+#: pylav/helpers/discord/converters/radio.py:415
 msgid "The Radio Browser extension is currently disabled."
 msgstr "Rozszerzenie Radio Browser jest obecnie wyłączone."
 
-#: pylav/helpers/discord/converters/radio.py:102
+#: pylav/helpers/discord/converters/radio.py:103
 msgid "Unnamed"
 msgstr "Nienazwane"
 
-#: pylav/helpers/discord/converters/radio.py:152
+#: pylav/helpers/discord/converters/radio.py:154
 msgid "A tag with the name `{user_input_variable_do_not_translate}` was not found."
 msgstr "Znacznik o nazwie '{user_input_variable_do_not_translate}' nie znaleziono."
 
-#: pylav/helpers/discord/converters/radio.py:202
+#: pylav/helpers/discord/converters/radio.py:204
 msgid "A language with the name `{user_input_variable_do_not_translate}` was not found."
 msgstr "Język o nazwie \"{user_input_variable_do_not_translate}' nie znaleziono."
 
-#: pylav/helpers/discord/converters/radio.py:250
+#: pylav/helpers/discord/converters/radio.py:252
 msgid "A state with the name `{user_input_variable_do_not_translate}` was not found."
 msgstr "Państwo o nazwie \"{user_input_variable_do_not_translate}' nie znaleziono."
 
-#: pylav/helpers/discord/converters/radio.py:297
+#: pylav/helpers/discord/converters/radio.py:299
 msgid "A codec with the name `{user_input_variable_do_not_translate}` was not found."
 msgstr "Koder-dekoder o nazwie '{user_input_variable_do_not_translate}' nie znaleziono."
 
-#: pylav/helpers/discord/converters/radio.py:344
+#: pylav/helpers/discord/converters/radio.py:346
 msgid "A country code with the value `{user_input_variable_do_not_translate}` was not found."
 msgstr "Kod kraju o wartości '{user_input_variable_do_not_translate}' nie znaleziono."
 
-#: pylav/helpers/discord/converters/radio.py:391
+#: pylav/helpers/discord/converters/radio.py:393
 msgid "A country with the name `{user_input_variable_do_not_translate}` was not found."
 msgstr "Kraj o nazwie \"{user_input_variable_do_not_translate}' nie znaleziono."
 

@@ -42,8 +42,7 @@ class BotClientWithLavalinkType(BotClient):
 
     async def get_context(
         self, message: discord.abc.Message | DISCORD_INTERACTION_TYPE | PyLavContext, *, cls: type[PyLavContext] = None
-    ) -> PyLavContext[Any]:
-        ...
+    ) -> PyLavContext[Any]: ...
 
 
 class DISCORD_INTERACTION_TYPE_BASE(discord.Interaction):

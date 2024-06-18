@@ -512,7 +512,7 @@ class WebSocket:
 
     async def handle_event(
         self,
-        data: (TrackStart | TrackEnd | TrackException | TrackStuck | Closed | SegmentsLoaded | SegmentSkipped),
+        data: TrackStart | TrackEnd | TrackException | TrackStuck | Closed | SegmentsLoaded | SegmentSkipped,
     ):
         """
         Handles the event message from Lavalink.

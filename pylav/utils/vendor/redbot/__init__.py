@@ -6,6 +6,7 @@ https://github.com/Cog-Creators/Red-DiscordBot/blob/V3/develop/redbot/core/utils
 Original license can be found at:
 https://github.com/Cog-Creators/Red-DiscordBot/blob/V3/develop/LICENSE
 """
+
 from __future__ import annotations
 
 import asyncio

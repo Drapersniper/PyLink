@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: pylav\n"
-"POT-Creation-Date: 2024-05-21 18:24+0000\n"
-"PO-Revision-Date: 2024-05-23 10:22\n"
+"POT-Creation-Date: 2024-06-18 22:00+0000\n"
+"PO-Revision-Date: 2024-06-18 22:01\n"
 "Last-Translator: \n"
 "Language-Team: Hungarian\n"
 "MIME-Version: 1.0\n"
@@ -25,131 +25,131 @@ msgstr "Jelenleg nincsenek elérhető csomópontok."
 msgid "Music in {number_of_servers_variable_do_not_translate} servers"
 msgstr "Zene a {number_of_servers_variable_do_not_translate} Szerverek"
 
-#: pylav/players/player.py:1162
+#: pylav/players/player.py:1166
 msgid "There are no tracks currently in the player history."
 msgstr "Jelenleg nincsenek pályák a játékos történetében."
 
-#: pylav/players/player.py:1846
+#: pylav/players/player.py:1850
 msgid "Current node has the volume filter feature disabled."
 msgstr "Az aktuális csomóponton le van tiltva a kötetszűrő funkció."
 
-#: pylav/players/player.py:1868 pylav/players/player.py:2064
-#: pylav/players/player.py:2119
+#: pylav/players/player.py:1872 pylav/players/player.py:2068
+#: pylav/players/player.py:2123
 msgid "Current node has the equalizer feature disabled."
 msgstr "Az aktuális csomóponton le van tiltva a hangszínszabályzó funkció."
 
-#: pylav/players/player.py:1888
+#: pylav/players/player.py:1892
 msgid "Current node has the karaoke feature disabled"
 msgstr "Az aktuális csomóponton le van tiltva a karaoke funkció"
 
-#: pylav/players/player.py:1908 pylav/players/player.py:2066
-#: pylav/players/player.py:2121
+#: pylav/players/player.py:1912 pylav/players/player.py:2070
+#: pylav/players/player.py:2125
 msgid "Current node has the timescale feature disabled."
 msgstr "Az aktuális csomóponton le van tiltva az időskála funkció."
 
-#: pylav/players/player.py:1928
+#: pylav/players/player.py:1932
 msgid "Current node has the tremolo feature disabled."
 msgstr "Az aktuális csomóponton a tremolo funkció le van tiltva."
 
-#: pylav/players/player.py:1948
+#: pylav/players/player.py:1952
 msgid "Current node has the vibrato feature disabled."
 msgstr "Az aktuális csomóponton a vibrato funkció le van tiltva."
 
-#: pylav/players/player.py:1968
+#: pylav/players/player.py:1972
 msgid "Current node has the rotation feature disabled."
 msgstr "Az aktuális csomóponton le van tiltva az elforgatási funkció."
 
-#: pylav/players/player.py:1988
+#: pylav/players/player.py:1992
 msgid "Current node has the distortion feature disabled."
 msgstr "Az aktuális csomóponton le van tiltva a torzítási funkció."
 
-#: pylav/players/player.py:2008
+#: pylav/players/player.py:2012
 msgid "Current node has the low-pass feature disabled."
 msgstr "Az aktuális csomóponton le van tiltva az aluláteresztő funkció."
 
-#: pylav/players/player.py:2028
+#: pylav/players/player.py:2032
 msgid "Current node has the echo feature disabled."
 msgstr "Az aktuális csomóponton le van tiltva a visszhang funkció."
 
-#: pylav/players/player.py:2048
+#: pylav/players/player.py:2052
 msgid "Current node has the reverb feature disabled."
 msgstr "A jelenlegi csomóponton letiltva van az akusztikus visszhang funkció."
 
-#: pylav/players/player.py:2178
+#: pylav/players/player.py:2182
 msgid "Current node has the channel-mix feature disabled."
 msgstr "Az aktuális csomóponton le van tiltva a csatornakeverési funkció."
 
-#: pylav/players/player.py:2477 pylav/players/player.py:2544
-#: pylav/players/player.py:2561 pylav/players/player.py:2667
+#: pylav/players/player.py:2481 pylav/players/player.py:2547
+#: pylav/players/player.py:2567 pylav/players/player.py:2674
 msgid "LIVE"
 msgstr "ÉL"
 
-#: pylav/players/player.py:2496
+#: pylav/players/player.py:2498
 msgid "Now Playing in {server_name_variable_do_not_translate}"
 msgstr "Most játszol {server_name_variable_do_not_translate}"
 
-#: pylav/players/player.py:2523 pylav/players/player.py:2715
+#: pylav/players/player.py:2525 pylav/players/player.py:2720
 msgid "Currently livestreaming"
 msgstr "Jelenleg élő közvetítés"
 
-#: pylav/players/player.py:2525
+#: pylav/players/player.py:2527
 msgid "Playing: "
 msgstr "Játszik: "
 
-#: pylav/players/player.py:2528 pylav/players/player.py:2553
-#: pylav/players/player.py:2569 pylav/players/player.py:2721
+#: pylav/players/player.py:2530 pylav/players/player.py:2558
+#: pylav/players/player.py:2576 pylav/players/player.py:2726
 msgid "Requester"
 msgstr "Igénylő"
 
-#: pylav/players/player.py:2534
+#: pylav/players/player.py:2536
 msgid "Duration: {track_duration_variable_do_not_translate}"
 msgstr "Időtartam: {track_duration_variable_do_not_translate}"
 
-#: pylav/players/player.py:2549 pylav/players/player.py:2565
+#: pylav/players/player.py:2554 pylav/players/player.py:2572
 msgid "Duration"
 msgstr "Időtartam"
 
-#: pylav/players/player.py:2555
+#: pylav/players/player.py:2560
 msgid "Previous Track"
 msgstr "Előző szám"
 
-#: pylav/players/player.py:2571
+#: pylav/players/player.py:2578
 msgid "Next Track"
 msgstr "Következő szám"
 
-#: pylav/players/player.py:2581
+#: pylav/players/player.py:2588
 msgid "1 track, {queue_total_duration_variable_do_not_translate} remaining\n"
 msgstr "1 pálya, {queue_total_duration_variable_do_not_translate} megmaradó\n"
 
-#: pylav/players/player.py:2585
+#: pylav/players/player.py:2592
 msgid "0 tracks, {queue_total_duration_variable_do_not_translate} remaining\n"
 msgstr "0 sáv, {queue_total_duration_variable_do_not_translate} megmaradó\n"
 
-#: pylav/players/player.py:2589
+#: pylav/players/player.py:2596
 msgid "{track_count_variable_do_not_translate} tracks, {queue_total_duration_variable_do_not_translate} remaining\n"
 msgstr "{track_count_variable_do_not_translate} sín {queue_total_duration_variable_do_not_translate} megmaradó\n"
 
-#: pylav/players/player.py:2596 pylav/players/player.py:2762
+#: pylav/players/player.py:2603 pylav/players/player.py:2767
 msgid "Repeating"
 msgstr "Ismétlődő"
 
-#: pylav/players/player.py:2598 pylav/players/player.py:2764
+#: pylav/players/player.py:2605 pylav/players/player.py:2769
 msgid "Auto Play"
 msgstr "Automatikus lejátszás"
 
-#: pylav/players/player.py:2601 pylav/players/player.py:2767
+#: pylav/players/player.py:2608 pylav/players/player.py:2772
 msgid "Effects"
 msgstr "Hatások"
 
-#: pylav/players/player.py:2605 pylav/players/player.py:2771
+#: pylav/players/player.py:2612 pylav/players/player.py:2776
 msgid "{volume_variable_do_not_translate}%"
 msgstr "{volume_variable_do_not_translate}%"
 
-#: pylav/players/player.py:2606 pylav/players/player.py:2772
+#: pylav/players/player.py:2613 pylav/players/player.py:2777
 msgid "Volume"
 msgstr "Térfogat"
 
-#: pylav/players/player.py:2609
+#: pylav/players/player.py:2616
 msgid "\n\n"
 "You can search specific services by using the following prefixes:\n"
 "{deezer_service_variable_do_not_translate}  - Deezer\n"
@@ -173,31 +173,31 @@ msgstr "\n\n"
 "Példa: {example_variable_do_not_translate}.\n\n"
 "Ha nem használ előtagot, akkor alapértelmezés szerint {fallback_service_variable_do_not_translate}\n"
 
-#: pylav/players/player.py:2680
+#: pylav/players/player.py:2685
 msgid "Recently Played for {server_name_variable_do_not_translate}"
 msgstr "Nemrég játszott {server_name_variable_do_not_translate}"
 
-#: pylav/players/player.py:2686
+#: pylav/players/player.py:2691
 msgid "Queue for {server_name_variable_do_not_translate}"
 msgstr "Várólista a következőhöz: {server_name_variable_do_not_translate}"
 
-#: pylav/players/player.py:2718
+#: pylav/players/player.py:2723
 msgid "Playing"
 msgstr "Játszik"
 
-#: pylav/players/player.py:2734
+#: pylav/players/player.py:2739
 msgid "Queue order will change every time a track is added due to auto shuffle being enabled."
 msgstr "A várólista-sorrend minden alkalommal megváltozik, amikor egy sávot hozzáadnak az automatikus keverés engedélyezése miatt."
 
-#: pylav/players/player.py:2744
+#: pylav/players/player.py:2749
 msgid "Page 1 / 1 | 1 track, {queue_total_duration_variable_do_not_translate} remaining\n"
 msgstr "Oldal 1 / 1 | 1 pálya, {queue_total_duration_variable_do_not_translate} megmaradó\n"
 
-#: pylav/players/player.py:2748
+#: pylav/players/player.py:2753
 msgid "Page 1 / 1 | 0 tracks, {queue_total_duration_variable_do_not_translate} remaining\n"
 msgstr "Oldal 1 / 1 | 0 sáv, {queue_total_duration_variable_do_not_translate} megmaradó\n"
 
-#: pylav/players/player.py:2752
+#: pylav/players/player.py:2757
 msgid "Page {current_page_variable_do_not_translate} / {total_pages_variable_do_not_translate} | {track_number_variable_do_not_translate} tracks, {queue_total_duration_variable_do_not_translate} remaining\n"
 msgstr "Oldal {current_page_variable_do_not_translate} / {total_pages_variable_do_not_translate} | {track_number_variable_do_not_translate} sín {queue_total_duration_variable_do_not_translate} megmaradó\n"
 
