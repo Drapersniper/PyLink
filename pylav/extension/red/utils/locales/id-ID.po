@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: pylav\n"
-"POT-Creation-Date: 2023-05-17 19:31+0000\n"
-"PO-Revision-Date: 2024-05-23 10:22\n"
+"POT-Creation-Date: 2024-06-18 22:00+0000\n"
+"PO-Revision-Date: 2024-06-18 22:01\n"
 "Last-Translator: \n"
 "Language-Team: Indonesian\n"
 "MIME-Version: 1.0\n"
@@ -69,7 +69,7 @@ msgstr "Perintah ini mengharuskan saya berada di saluran suara sebelum dapat die
 msgid "PyLavPlayer cog is temporarily unavailable due to an outage with the backend services; please try again later."
 msgstr "Roda gigi PyLavPlayer untuk sementara tidak tersedia karena pemadaman dengan layanan backend; Silakan coba lagi nanti."
 
-#: pylav/extension/red/utils/required_methods.py:141
+#: pylav/extension/red/utils/required_methods.py:142
 msgid "There are no nodes available currently."
 msgstr "Tidak ada node yang tersedia saat ini."
 
@@ -77,19 +77,19 @@ msgstr "Tidak ada node yang tersedia saat ini."
 msgid "PyLavPlayer is currently unable to process tracks belonging to {feature_name_variable_do_not_translate}."
 msgstr "PyLavPlayer saat ini tidak dapat memproses trek milik {feature_name_variable_do_not_translate}."
 
-#: pylav/extension/red/utils/required_methods.py:155
+#: pylav/extension/red/utils/required_methods.py:156
 msgid "There is currently no available Lavalink node with the feature {feature_name_variable_do_not_translate}."
 msgstr "Saat ini tidak ada node Lavalink yang tersedia dengan fitur tersebut {feature_name_variable_do_not_translate}."
 
-#: pylav/extension/red/utils/required_methods.py:168
+#: pylav/extension/red/utils/required_methods.py:170
 msgid "This command is unavailable in this channel; please use {channel_name_variable_do_not_translate} instead."
 msgstr "Perintah ini tidak tersedia di saluran ini; silakan gunakan {channel_name_variable_do_not_translate} Sebaliknya."
 
-#: pylav/extension/red/utils/required_methods.py:184
+#: pylav/extension/red/utils/required_methods.py:188
 msgid "This command requires you to be a disc jockey."
 msgstr "Perintah ini mengharuskan Anda untuk menjadi disc jockey."
 
-#: pylav/extension/red/utils/required_methods.py:222
+#: pylav/extension/red/utils/required_methods.py:226
 msgid "PyLav is starting up; please try again in a few minutes."
 msgstr "PyLav sedang memulai; Silakan coba lagi dalam beberapa menit."
 

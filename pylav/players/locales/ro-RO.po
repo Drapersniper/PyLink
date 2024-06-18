@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: pylav\n"
-"POT-Creation-Date: 2024-05-21 18:24+0000\n"
-"PO-Revision-Date: 2024-05-21 18:25\n"
+"POT-Creation-Date: 2024-06-18 22:00+0000\n"
+"PO-Revision-Date: 2024-06-18 22:01\n"
 "Last-Translator: \n"
 "Language-Team: Romanian\n"
 "MIME-Version: 1.0\n"
@@ -25,131 +25,131 @@ msgstr "Nu există noduri disponibile în prezent."
 msgid "Music in {number_of_servers_variable_do_not_translate} servers"
 msgstr "Muzică în {number_of_servers_variable_do_not_translate} Servere"
 
-#: pylav/players/player.py:1162
+#: pylav/players/player.py:1166
 msgid "There are no tracks currently in the player history."
 msgstr "Nu există piese în prezent în istoria jucătorului."
 
-#: pylav/players/player.py:1846
+#: pylav/players/player.py:1850
 msgid "Current node has the volume filter feature disabled."
 msgstr "Nodul curent are caracteristica filtrului de volum dezactivată."
 
-#: pylav/players/player.py:1868 pylav/players/player.py:2064
-#: pylav/players/player.py:2119
+#: pylav/players/player.py:1872 pylav/players/player.py:2068
+#: pylav/players/player.py:2123
 msgid "Current node has the equalizer feature disabled."
 msgstr "Nodul curent are caracteristica de egalizator dezactivată."
 
-#: pylav/players/player.py:1888
+#: pylav/players/player.py:1892
 msgid "Current node has the karaoke feature disabled"
 msgstr "Nodul curent are funcția karaoke dezactivată"
 
-#: pylav/players/player.py:1908 pylav/players/player.py:2066
-#: pylav/players/player.py:2121
+#: pylav/players/player.py:1912 pylav/players/player.py:2070
+#: pylav/players/player.py:2125
 msgid "Current node has the timescale feature disabled."
 msgstr "Nodul curent are caracteristica scală de timp dezactivată."
 
-#: pylav/players/player.py:1928
+#: pylav/players/player.py:1932
 msgid "Current node has the tremolo feature disabled."
 msgstr "Nodul curent are caracteristica tremolo dezactivată."
 
-#: pylav/players/player.py:1948
+#: pylav/players/player.py:1952
 msgid "Current node has the vibrato feature disabled."
 msgstr "Nodul curent are funcția vibrato dezactivată."
 
-#: pylav/players/player.py:1968
+#: pylav/players/player.py:1972
 msgid "Current node has the rotation feature disabled."
 msgstr "Nodul curent are caracteristica de rotație dezactivată."
 
-#: pylav/players/player.py:1988
+#: pylav/players/player.py:1992
 msgid "Current node has the distortion feature disabled."
 msgstr "Nodul curent are caracteristica de distorsiune dezactivată."
 
-#: pylav/players/player.py:2008
+#: pylav/players/player.py:2012
 msgid "Current node has the low-pass feature disabled."
 msgstr "Nodul curent are caracteristica low-pass dezactivată."
 
-#: pylav/players/player.py:2028
+#: pylav/players/player.py:2032
 msgid "Current node has the echo feature disabled."
 msgstr "Nodul curent are caracteristica ecou dezactivată."
 
-#: pylav/players/player.py:2048
+#: pylav/players/player.py:2052
 msgid "Current node has the reverb feature disabled."
 msgstr "Modulul curent are funcția de reverb dezactivată."
 
-#: pylav/players/player.py:2178
+#: pylav/players/player.py:2182
 msgid "Current node has the channel-mix feature disabled."
 msgstr "Nodul curent are funcția de mixare a canalelor dezactivată."
 
-#: pylav/players/player.py:2477 pylav/players/player.py:2544
-#: pylav/players/player.py:2561 pylav/players/player.py:2667
+#: pylav/players/player.py:2481 pylav/players/player.py:2547
+#: pylav/players/player.py:2567 pylav/players/player.py:2674
 msgid "LIVE"
 msgstr "IV-VA"
 
-#: pylav/players/player.py:2496
+#: pylav/players/player.py:2498
 msgid "Now Playing in {server_name_variable_do_not_translate}"
 msgstr "Acum joacă în {server_name_variable_do_not_translate}"
 
-#: pylav/players/player.py:2523 pylav/players/player.py:2715
+#: pylav/players/player.py:2525 pylav/players/player.py:2720
 msgid "Currently livestreaming"
 msgstr "În prezent animalul"
 
-#: pylav/players/player.py:2525
+#: pylav/players/player.py:2527
 msgid "Playing: "
 msgstr "Redare: "
 
-#: pylav/players/player.py:2528 pylav/players/player.py:2553
-#: pylav/players/player.py:2569 pylav/players/player.py:2721
+#: pylav/players/player.py:2530 pylav/players/player.py:2558
+#: pylav/players/player.py:2576 pylav/players/player.py:2726
 msgid "Requester"
 msgstr "Solicitant"
 
-#: pylav/players/player.py:2534
+#: pylav/players/player.py:2536
 msgid "Duration: {track_duration_variable_do_not_translate}"
 msgstr "Durată: {track_duration_variable_do_not_translate}"
 
-#: pylav/players/player.py:2549 pylav/players/player.py:2565
+#: pylav/players/player.py:2554 pylav/players/player.py:2572
 msgid "Duration"
 msgstr "Durată"
 
-#: pylav/players/player.py:2555
+#: pylav/players/player.py:2560
 msgid "Previous Track"
 msgstr "Pistă anterioară"
 
-#: pylav/players/player.py:2571
+#: pylav/players/player.py:2578
 msgid "Next Track"
 msgstr "Următoarea piesă"
 
-#: pylav/players/player.py:2581
+#: pylav/players/player.py:2588
 msgid "1 track, {queue_total_duration_variable_do_not_translate} remaining\n"
 msgstr "1 pistă, {queue_total_duration_variable_do_not_translate} Rămase\n"
 
-#: pylav/players/player.py:2585
+#: pylav/players/player.py:2592
 msgid "0 tracks, {queue_total_duration_variable_do_not_translate} remaining\n"
 msgstr "0 piese, {queue_total_duration_variable_do_not_translate} Rămase\n"
 
-#: pylav/players/player.py:2589
+#: pylav/players/player.py:2596
 msgid "{track_count_variable_do_not_translate} tracks, {queue_total_duration_variable_do_not_translate} remaining\n"
 msgstr "{track_count_variable_do_not_translate} Piese {queue_total_duration_variable_do_not_translate} Rămase\n"
 
-#: pylav/players/player.py:2596 pylav/players/player.py:2762
+#: pylav/players/player.py:2603 pylav/players/player.py:2767
 msgid "Repeating"
 msgstr "Repetare"
 
-#: pylav/players/player.py:2598 pylav/players/player.py:2764
+#: pylav/players/player.py:2605 pylav/players/player.py:2769
 msgid "Auto Play"
 msgstr "Redare automată"
 
-#: pylav/players/player.py:2601 pylav/players/player.py:2767
+#: pylav/players/player.py:2608 pylav/players/player.py:2772
 msgid "Effects"
 msgstr "Efecte"
 
-#: pylav/players/player.py:2605 pylav/players/player.py:2771
+#: pylav/players/player.py:2612 pylav/players/player.py:2776
 msgid "{volume_variable_do_not_translate}%"
 msgstr "{volume_variable_do_not_translate}%"
 
-#: pylav/players/player.py:2606 pylav/players/player.py:2772
+#: pylav/players/player.py:2613 pylav/players/player.py:2777
 msgid "Volume"
 msgstr "Volum"
 
-#: pylav/players/player.py:2609
+#: pylav/players/player.py:2616
 msgid "\n\n"
 "You can search specific services by using the following prefixes:\n"
 "{deezer_service_variable_do_not_translate}  - Deezer\n"
@@ -173,31 +173,31 @@ msgstr "\n\n"
 "Exemplu: {example_variable_do_not_translate}.\n\n"
 "În cazul în care nu se utilizează nici un prefix voi implicit la {fallback_service_variable_do_not_translate}\n"
 
-#: pylav/players/player.py:2680
+#: pylav/players/player.py:2685
 msgid "Recently Played for {server_name_variable_do_not_translate}"
 msgstr "Recent jucat pentru {server_name_variable_do_not_translate}"
 
-#: pylav/players/player.py:2686
+#: pylav/players/player.py:2691
 msgid "Queue for {server_name_variable_do_not_translate}"
 msgstr "Coadă pentru {server_name_variable_do_not_translate}"
 
-#: pylav/players/player.py:2718
+#: pylav/players/player.py:2723
 msgid "Playing"
 msgstr "Redare"
 
-#: pylav/players/player.py:2734
+#: pylav/players/player.py:2739
 msgid "Queue order will change every time a track is added due to auto shuffle being enabled."
 msgstr "Ordinea cozii se va modifica de fiecare dată când este adăugată o pistă din cauza amestecării automate activate."
 
-#: pylav/players/player.py:2744
+#: pylav/players/player.py:2749
 msgid "Page 1 / 1 | 1 track, {queue_total_duration_variable_do_not_translate} remaining\n"
 msgstr "Pagina 1 / 1 | 1 pistă, {queue_total_duration_variable_do_not_translate} Rămase\n"
 
-#: pylav/players/player.py:2748
+#: pylav/players/player.py:2753
 msgid "Page 1 / 1 | 0 tracks, {queue_total_duration_variable_do_not_translate} remaining\n"
 msgstr "Pagina 1 / 1 | 0 piese, {queue_total_duration_variable_do_not_translate} Rămase\n"
 
-#: pylav/players/player.py:2752
+#: pylav/players/player.py:2757
 msgid "Page {current_page_variable_do_not_translate} / {total_pages_variable_do_not_translate} | {track_number_variable_do_not_translate} tracks, {queue_total_duration_variable_do_not_translate} remaining\n"
 msgstr "Pagină {current_page_variable_do_not_translate} / {total_pages_variable_do_not_translate} | {track_number_variable_do_not_translate} Piese {queue_total_duration_variable_do_not_translate} Rămase\n"
 
