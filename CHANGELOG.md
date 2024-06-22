@@ -1,5 +1,11 @@
 # Changelog
 
+## v1.15.12 (22/06/2024)
+- [Update dependencies](https://github.com/PyLav/PyLav/commit/2dd93ecd23eb992dde75a06f3341afbc3c7bf384) - @Drapersniper
+- [Precommit checks only on PRs](https://github.com/PyLav/PyLav/commit/10690efe1fa81e495bfa39161aa116f9c0bae062) - @Drapersniper
+
+---
+
 ## v1.15.11 (18/06/2024)
 - [Hotfix for v1.15.10, ensuring youtube urls are actually functional](https://github.com/PyLav/PyLav/commit/31c78caced7c334456e6563882ce9a936d423609) - @Drapersniper
 - [Auto Merge](https://github.com/PyLav/PyLav/commit/3c53b6618107a238f0fd0a2f40f49d56a27cbe49) - @Drapersniper
@@ -812,11 +818,3 @@
 
 ## v1.0.9 (02/01/2023)
 - [default the PyLav external node to off](https://github.com/Drapersniper/PyLav/commit/7217d3bf68a385ca5c8d5f591395c29531f9eed1) - @Drapersniper
-
----
-
-## v1.0.8 (02/01/2023)
-- [fix to avoid the local database being constantly wiped](https://github.com/Drapersniper/PyLav/commit/dba0dcadf21c91fe1b8fa7fd2a72e60cdee5d598) - @Drapersniper
-- [Remove `lava.link` bundled node permanently](https://github.com/Drapersniper/PyLav/commit/d7f201297e56f91faff0842541c8e92265bba56a) - @Drapersniper
-- [make the redbot container depend on the postgres and ll-node containers](https://github.com/Drapersniper/PyLav/commit/d6ac80a1c309e0619431b01b54f43d8268bc478f) - @Drapersniper
-- [Dependency update and cleanup](https://github.com/Drapersniper/PyLav/commit/7a51c40100e734aa151ea72e5751a39317fb47b6) - @Drapersniper
