@@ -1,5 +1,10 @@
 # Changelog
 
+## v1.15.13 (03/07/2024)
+- [Hotfixes](https://github.com/PyLav/PyLav/commit/d377ce9d28a7457144dc58abd079d4ece30a86a1) - @Drapersniper
+
+---
+
 ## v1.15.12 (22/06/2024)
 - [Update dependencies](https://github.com/PyLav/PyLav/commit/2dd93ecd23eb992dde75a06f3341afbc3c7bf384) - @Drapersniper
 - [Precommit checks only on PRs](https://github.com/PyLav/PyLav/commit/10690efe1fa81e495bfa39161aa116f9c0bae062) - @Drapersniper
@@ -813,8 +818,3 @@
 
 ## v1.0.10 (02/01/2023)
 - [Make sure name attribute can exist before accessing it](https://github.com/Drapersniper/PyLav/commit/037e0c4f0a93acbc7c4642e22f899bd99e7c70c0) - @Drapersniper
-
----
-
-## v1.0.9 (02/01/2023)
-- [default the PyLav external node to off](https://github.com/Drapersniper/PyLav/commit/7217d3bf68a385ca5c8d5f591395c29531f9eed1) - @Drapersniper
