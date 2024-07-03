@@ -466,7 +466,8 @@ class Playlist(CachedModel, metaclass=SingletonCachedByKey):
         str
             The formatted name.
         """
-        name = SQUARE_BRACKETS.sub("", await self.fetch_name()).strip()
+        unescaped_name = await self.fetch_name() or "Unnamed"
+        name = SQUARE_BRACKETS.sub("", unescaped_name).strip()
         if with_url:
             url = await self.fetch_url()
             if url and url.startswith("http"):

@@ -120,7 +120,7 @@ documentation = "https://pylav.readthedocs.io/en/latest/"
 include = [
     "CHANGELOG.md",
     "LICENSE",
-    "**/LICENSE.*",
+    "**/LICENSE-*",
 ]
 exclude = [
     "**/__pycache__",
@@ -156,9 +156,7 @@ piccolo = {extras = ["all"], version = "^1.12.0"}
 tabulate = {extras = ["widechars"], version = "^0.9.0"}
 ujson = "^5.10.0"
 watchfiles = "^0.22.0"
-
-# Redis optional dependency
-redis = { version = "^5.0.6", optional = true}
+redis = { version = "^5.0.6" }
 
 # Red optional dependencies
 aiohttp = {extras = ["speedups"], version = "3.9.3", optional = true}
@@ -233,10 +231,9 @@ sphinx-issues = { version = "^4.1.0"}
 sphinx-removed-in = { version = "^0.2.2"}
 
 [tool.poetry.extras]
-redis = ["redis"]
-all = ["redis"]
+all = []
 red = ["Red-Commons", "aiohttp", "apsw", "orjson", "packaging", "platformdirs", "psutil", "python-dateutil", "pytz", "rich", "typing-extensions", "rapidfuzz", "uvloop"]
-all-red = ["redis", "Red-Commons", "aiohttp", "apsw", "orjson", "packaging", "platformdirs", "psutil", "python-dateutil", "pytz", "rich", "typing-extensions", "rapidfuzz", "uvloop"]
+all-red = ["Red-Commons", "aiohttp", "apsw", "orjson", "packaging", "platformdirs", "psutil", "python-dateutil", "pytz", "rich", "typing-extensions", "rapidfuzz", "uvloop"]
 docs = ["Red-DiscordBot", "furo", "olefile", "sphinx_rtd_theme", "sphinx-copybutton", "sphinx-inline-tabs", "sphinx-issues", "sphinx-removed-in"]
 dev = ["pre-commit"]
 
