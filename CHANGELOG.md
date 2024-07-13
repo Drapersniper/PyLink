@@ -1,5 +1,10 @@
 # Changelog
 
+## v1.15.14 (13/07/2024)
+- [Update Youtube Plugin version (#312)](https://github.com/PyLav/PyLav/commit/72060a49a8879b966c65696f413f40f2cb52ef1b) - @Drapersniper
+
+---
+
 ## v1.15.13 (03/07/2024)
 - [Hotfixes](https://github.com/PyLav/PyLav/commit/d377ce9d28a7457144dc58abd079d4ece30a86a1) - @Drapersniper
 
@@ -813,8 +818,3 @@
 - [`[p]plsyncslash` should be owner only](https://github.com/Drapersniper/PyLav/commit/5690710cdabf5b6b245043c01a50f0f0cdaafbe3) - @Drapersniper
 - [Remove old invalid locale folders](https://github.com/Drapersniper/PyLav/commit/9f2b28f4c7eaa589a3df20cb83274c9b67b3af7a) - @Drapersniper
 - [[CI] Add automerge label to workflow prs](https://github.com/Drapersniper/PyLav/commit/7ab00839d50b6c686362fa1b37303436792eb560) - @Drapersniper
-
----
-
-## v1.0.10 (02/01/2023)
-- [Make sure name attribute can exist before accessing it](https://github.com/Drapersniper/PyLav/commit/037e0c4f0a93acbc7c4642e22f899bd99e7c70c0) - @Drapersniper
