@@ -41,7 +41,7 @@ NODE_DEFAULT_SETTINGS = {
                 "dependency": "com.github.topi314.lavasearch:lavasearch-plugin:1.0.0",
             },
             {
-                "dependency": "dev.lavalink.youtube:youtube-plugin:1.3.0",
+                "dependency": "dev.lavalink.youtube:youtube-plugin:1.4.0",
             },
             {"dependency": "me.rohank05:lavalink-filter-plugin:0.0.2", "repository": "https://jitpack.io"},
             {"dependency": "com.github.esmBot:lava-xm-plugin:v0.2.1", "repository": "https://jitpack.io"},
