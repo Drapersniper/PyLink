@@ -73,7 +73,7 @@ services:
             LAVALINK_PLUGINS_1_DEPENDENCY: com.github.topi314.sponsorblock:sponsorblock-plugin:3.0.0
             LAVALINK_PLUGINS_2_DEPENDENCY: com.dunctebot:skybot-lavalink-plugin:1.7.0
             LAVALINK_PLUGINS_3_DEPENDENCY: com.github.topi314.lavasearch:lavasearch-plugin:1.0.0
-            LAVALINK_PLUGINS_4_DEPENDENCY: dev.lavalink.youtube:youtube-plugin:1.3.0
+            LAVALINK_PLUGINS_4_DEPENDENCY: dev.lavalink.youtube:youtube-plugin:1.4.0
             LAVALINK_PLUGINS_5_DEPENDENCY: com.github.topi314.lavalyrics:lavalyrics-plugin:1.0.0
             LAVALINK_PLUGINS_6_DEPENDENCY: me.rohank05:lavalink-filter-plugin:0.0.4
             LAVALINK_PLUGINS_6_REPOSITORY: https://jitpack.io
