@@ -8,8 +8,8 @@ lavalink:
     -   dependency: dev.lavalink.youtube:youtube-plugin:1.4.0
     -   dependency: me.rohank05:lavalink-filter-plugin:0.0.4
         repository: https://jitpack.io
-    -   dependency: com.github.esmBot:lava-xm-plugin:v0.2.5
-        repository: https://jitpack.io
+    -   dependency: net.esmbot:lava-xm-plugin:0.2.5
+        repository: https://repo.projectlounge.pw/maven/releases
     server:
         password: youshallnotpass
         bufferDurationMs: 400 # The duration of the NAS buffer. Higher values fare better against longer GC pauses. Duration <= 0 to disable JDA-NAS. Minimum of 40ms, lower values may introduce pauses.

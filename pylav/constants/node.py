@@ -44,7 +44,7 @@ NODE_DEFAULT_SETTINGS = {
                 "dependency": "dev.lavalink.youtube:youtube-plugin:1.4.0",
             },
             {"dependency": "me.rohank05:lavalink-filter-plugin:0.0.2", "repository": "https://jitpack.io"},
-            {"dependency": "com.github.esmBot:lava-xm-plugin:v0.2.1", "repository": "https://jitpack.io"},
+            {"dependency": "net.esmbot:lava-xm-plugin:0.2.5", "repository": "https://repo.projectlounge.pw/maven/releases"},
         ],
         "server": {
             "password": secrets.token_urlsafe(32),

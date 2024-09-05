@@ -60,11 +60,11 @@ async def update_plugins(client: Client) -> None:
                 org = "lavalink-devs"
                 repo = "youtube-source"
                 dependency += ":"
-            elif plugin["dependency"].startswith("com.github.esmBot:lava-xm-plugin:"):
+            elif plugin["dependency"].startswith("com.github.esmBot:lava-xm-plugin:") or plugin["dependency"].startswith("net.esmbot:lava-xm-plugin:"):
                 existing_plugins.add("lava-xm-plugin-")
-                org = "esmBot"
+                org = "net.esmbot"
                 repo = "lava-xm-plugin"
-                repository = "https://jitpack.io"
+                repository = "https://repo.projectlounge.pw/maven/releases"
                 dependency += ":"
             elif plugin["dependency"].startswith("me.rohank05:lavalink-filter-plugin:"):
                 existing_plugins.add("lavalink-filter-plugin-")
